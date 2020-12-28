@@ -22,5 +22,16 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "demo-assembly-material": {
+      "tags": []
+    },
+    "demo-assembly-material-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-assembly-material"]
+    },
+    "assembly-material": {
+      "tags": []
+    }
+  }
 }
