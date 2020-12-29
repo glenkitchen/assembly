@@ -8,7 +8,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/demo-assembly-material",
             "index": "apps/demo-assembly-material/src/index.html",
@@ -69,7 +71,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/demo-assembly-material"],
+          "outputs": [
+            "coverage/apps/demo-assembly-material"
+          ],
           "options": {
             "jestConfig": "apps/demo-assembly-material/jest.config.js",
             "passWithNoTests": true
@@ -98,7 +102,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/demo-assembly-material-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/demo-assembly-material-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -111,18 +117,27 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/assembly-material/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/assembly-material/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "build": {
           "executor": "@nrwl/web:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/libs/assembly-material",
             "tsConfig": "libs/assembly-material/tsconfig.lib.json",
             "project": "libs/assembly-material/package.json",
             "entryFile": "libs/assembly-material/src/index.ts",
-            "external": ["react", "react-dom", "react-is", "styled-components"],
+            "external": [
+              "react",
+              "react-dom",
+              "react-is",
+              "styled-components"
+            ],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -136,7 +151,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/assembly-material"],
+          "outputs": [
+            "coverage/libs/assembly-material"
+          ],
           "options": {
             "jestConfig": "libs/assembly-material/jest.config.js",
             "passWithNoTests": true
@@ -151,7 +168,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/assembly-client",
             "index": "apps/assembly-client/src/index.html",
@@ -205,12 +224,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/assembly-client/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/assembly-client/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/assembly-client"],
+          "outputs": [
+            "coverage/apps/assembly-client"
+          ],
           "options": {
             "jestConfig": "apps/assembly-client/jest.config.js",
             "passWithNoTests": true
@@ -239,7 +262,34 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/assembly-client-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/assembly-client-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "common": {
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/common"
+          ],
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

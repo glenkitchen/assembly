@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "assembly-material": ["libs/assembly-material/src/index.ts"]
+      "assembly-material": ["libs/assembly-material/src/index.ts"],
+      "@assembly/common": ["libs/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

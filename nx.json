@@ -39,6 +39,9 @@
     "assembly-client-e2e": {
       "tags": [],
       "implicitDependencies": ["assembly-client"]
+    },
+    "common": {
+      "tags": []
     }
   }
 }
