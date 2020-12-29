@@ -32,6 +32,13 @@
     },
     "assembly-material": {
       "tags": []
+    },
+    "assembly-client": {
+      "tags": []
+    },
+    "assembly-client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["assembly-client"]
     }
   }
 }

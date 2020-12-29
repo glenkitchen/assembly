@@ -8,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/demo-assembly-material",
             "index": "apps/demo-assembly-material/src/index.html",
@@ -71,9 +69,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/demo-assembly-material"
-          ],
+          "outputs": ["coverage/apps/demo-assembly-material"],
           "options": {
             "jestConfig": "apps/demo-assembly-material/jest.config.js",
             "passWithNoTests": true
@@ -102,9 +98,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/demo-assembly-material-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/demo-assembly-material-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -117,27 +111,18 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/assembly-material/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/assembly-material/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "build": {
           "executor": "@nrwl/web:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/libs/assembly-material",
             "tsConfig": "libs/assembly-material/tsconfig.lib.json",
             "project": "libs/assembly-material/package.json",
             "entryFile": "libs/assembly-material/src/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "react-is",
-              "styled-components"
-            ],
+            "external": ["react", "react-dom", "react-is", "styled-components"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -151,12 +136,110 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/assembly-material"
-          ],
+          "outputs": ["coverage/libs/assembly-material"],
           "options": {
             "jestConfig": "libs/assembly-material/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "assembly-client": {
+      "root": "apps/assembly-client",
+      "sourceRoot": "apps/assembly-client/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/assembly-client",
+            "index": "apps/assembly-client/src/index.html",
+            "main": "apps/assembly-client/src/main.tsx",
+            "polyfills": "apps/assembly-client/src/polyfills.ts",
+            "tsConfig": "apps/assembly-client/tsconfig.app.json",
+            "assets": [
+              "apps/assembly-client/src/favicon.ico",
+              "apps/assembly-client/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/assembly-client/src/environments/environment.ts",
+                  "with": "apps/assembly-client/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "assembly-client:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "assembly-client:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/assembly-client/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/assembly-client"],
+          "options": {
+            "jestConfig": "apps/assembly-client/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "assembly-client-e2e": {
+      "root": "apps/assembly-client-e2e",
+      "sourceRoot": "apps/assembly-client-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/assembly-client-e2e/cypress.json",
+            "tsConfig": "apps/assembly-client-e2e/tsconfig.e2e.json",
+            "devServerTarget": "assembly-client:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "assembly-client:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/assembly-client-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -181,5 +264,5 @@
       }
     }
   },
-  "defaultProject": "demo-assembly-material"
+  "defaultProject": "assembly-client"
 }
