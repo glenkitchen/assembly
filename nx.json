@@ -23,16 +23,6 @@
     }
   },
   "projects": {
-    "demo-assembly-material": {
-      "tags": []
-    },
-    "demo-assembly-material-e2e": {
-      "tags": [],
-      "implicitDependencies": ["demo-assembly-material"]
-    },
-    "assembly-material": {
-      "tags": []
-    },
     "assembly-client": {
       "tags": []
     },
@@ -40,8 +30,18 @@
       "tags": [],
       "implicitDependencies": ["assembly-client"]
     },
-    "common": {
+    "common-components": {
       "tags": []
+    },
+    "common-utils": {
+      "tags": []
+    },
+    "demo-assembly-material": {
+      "tags": []
+    },
+    "demo-assembly-material-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-assembly-material"]
     }
   }
 }

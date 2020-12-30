@@ -1,4 +1,4 @@
-import { theme } from '@assembly/common';
+import { themes } from '@assembly/common/utils';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -7,7 +7,7 @@ import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themes.dark}>
       <BrowserRouter>
         <App />
       </BrowserRouter>

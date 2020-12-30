@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "assembly-material": ["libs/assembly-material/src/index.ts"],
-      "@assembly/common": ["libs/common/src/index.ts"]
+      "@assembly/common/components": ["libs/common/components/src/index.ts"],
+      "@assembly/common/utils": ["libs/common/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

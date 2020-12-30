@@ -1,166 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "demo-assembly-material": {
-      "root": "apps/demo-assembly-material",
-      "sourceRoot": "apps/demo-assembly-material/src",
-      "projectType": "application",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "options": {
-            "outputPath": "dist/apps/demo-assembly-material",
-            "index": "apps/demo-assembly-material/src/index.html",
-            "main": "apps/demo-assembly-material/src/main.tsx",
-            "polyfills": "apps/demo-assembly-material/src/polyfills.ts",
-            "tsConfig": "apps/demo-assembly-material/tsconfig.app.json",
-            "assets": [
-              "apps/demo-assembly-material/src/favicon.ico",
-              "apps/demo-assembly-material/src/assets"
-            ],
-            "styles": [],
-            "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/webpack"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/demo-assembly-material/src/environments/environment.ts",
-                  "with": "apps/demo-assembly-material/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "executor": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "demo-assembly-material:build"
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "demo-assembly-material:build:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/demo-assembly-material/**/*.{ts,tsx,js,jsx}"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/demo-assembly-material"
-          ],
-          "options": {
-            "jestConfig": "apps/demo-assembly-material/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "demo-assembly-material-e2e": {
-      "root": "apps/demo-assembly-material-e2e",
-      "sourceRoot": "apps/demo-assembly-material-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/demo-assembly-material-e2e/cypress.json",
-            "tsConfig": "apps/demo-assembly-material-e2e/tsconfig.e2e.json",
-            "devServerTarget": "demo-assembly-material:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo-assembly-material:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/demo-assembly-material-e2e/**/*.{js,ts}"
-            ]
-          }
-        }
-      }
-    },
-    "assembly-material": {
-      "root": "libs/assembly-material",
-      "sourceRoot": "libs/assembly-material/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/assembly-material/**/*.{ts,tsx,js,jsx}"
-            ]
-          }
-        },
-        "build": {
-          "executor": "@nrwl/web:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "options": {
-            "outputPath": "dist/libs/assembly-material",
-            "tsConfig": "libs/assembly-material/tsconfig.lib.json",
-            "project": "libs/assembly-material/package.json",
-            "entryFile": "libs/assembly-material/src/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "react-is",
-              "styled-components"
-            ],
-            "babelConfig": "@nrwl/react/plugins/bundle-babel",
-            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-            "assets": [
-              {
-                "glob": "README.md",
-                "input": ".",
-                "output": "."
-              }
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/assembly-material"
-          ],
-          "options": {
-            "jestConfig": "libs/assembly-material/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "assembly-client": {
       "root": "apps/assembly-client",
       "sourceRoot": "apps/assembly-client/src",
@@ -168,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/assembly-client",
             "index": "apps/assembly-client/src/index.html",
@@ -224,16 +62,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/assembly-client/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/assembly-client/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/assembly-client"
-          ],
+          "outputs": ["coverage/apps/assembly-client"],
           "options": {
             "jestConfig": "apps/assembly-client/jest.config.js",
             "passWithNoTests": true
@@ -262,34 +96,151 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/assembly-client-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/assembly-client-e2e/**/*.{js,ts}"]
           }
         }
       }
     },
-    "common": {
-      "root": "libs/common",
-      "sourceRoot": "libs/common/src",
+    "common-components": {
+      "root": "libs/common/components",
+      "sourceRoot": "libs/common/components/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["libs/common/components/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/components"],
+          "options": {
+            "jestConfig": "libs/common/components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-utils": {
+      "root": "libs/common/utils",
+      "sourceRoot": "libs/common/utils/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/utils"],
+          "options": {
+            "jestConfig": "libs/common/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-assembly-material": {
+      "root": "apps/demo/assembly-material",
+      "sourceRoot": "apps/demo/assembly-material/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/demo/assembly-material",
+            "index": "apps/demo/assembly-material/src/index.html",
+            "main": "apps/demo/assembly-material/src/main.tsx",
+            "polyfills": "apps/demo/assembly-material/src/polyfills.ts",
+            "tsConfig": "apps/demo/assembly-material/tsconfig.app.json",
+            "assets": [
+              "apps/demo/assembly-material/src/favicon.ico",
+              "apps/demo/assembly-material/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo/assembly-material/src/environments/environment.ts",
+                  "with": "apps/demo/assembly-material/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "demo-assembly-material:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "demo-assembly-material:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "libs/common/**/*.ts"
+              "apps/demo/assembly-material/**/*.{ts,tsx,js,jsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/common"
-          ],
+          "outputs": ["coverage/apps/demo/assembly-material"],
           "options": {
-            "jestConfig": "libs/common/jest.config.js",
+            "jestConfig": "apps/demo/assembly-material/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-assembly-material-e2e": {
+      "root": "apps/demo/assembly-material-e2e",
+      "sourceRoot": "apps/demo/assembly-material-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/demo/assembly-material-e2e/cypress.json",
+            "tsConfig": "apps/demo/assembly-material-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo-assembly-material:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo-assembly-material:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/demo/assembly-material-e2e/**/*.{js,ts}"]
           }
         }
       }
