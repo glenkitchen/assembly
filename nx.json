@@ -42,6 +42,12 @@
     "demo-assembly-material-e2e": {
       "tags": [],
       "implicitDependencies": ["demo-assembly-material"]
+    },
+    "common-types": {
+      "tags": []
+    },
+    "common-themes": {
+      "tags": []
     }
   }
 }

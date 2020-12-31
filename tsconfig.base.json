@@ -17,7 +17,9 @@
     "paths": {
       "assembly-material": ["libs/assembly-material/src/index.ts"],
       "@assembly/common/components": ["libs/common/components/src/index.ts"],
-      "@assembly/common/utils": ["libs/common/utils/src/index.ts"]
+      "@assembly/common/utils": ["libs/common/utils/src/index.ts"],
+      "@assembly/common/types": ["libs/common/types/src/index.ts"],
+      "@assembly/common/themes": ["libs/common/themes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -8,5 +8,7 @@ module.exports = {
     '<rootDir>/libs/common/utils',
     '<rootDir>/apps/demo/assembly-material',
     '<rootDir>/apps/assembly-material',
+    '<rootDir>/libs/common/types',
+    '<rootDir>/libs/common/themes',
   ],
 };
