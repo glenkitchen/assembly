@@ -27,6 +27,7 @@
   },
   "private": true,
   "dependencies": {
+    "@styled-system/css": "^5.1.5",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "history": "^5.0.0",
