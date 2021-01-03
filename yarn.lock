@@ -2220,6 +2220,11 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
 
+"@types/store@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/store/-/store-2.0.2.tgz#6263d4f1aab225032ea55b17d94f3b725a21c943"
+  integrity sha512-ZPHnXkzmGMfk+pHqAGzTSpA9CbsHmJLgkvOl5w52LZ0XTxB1ZIHWZzQ7lEtjTNWScBbsQekg8TjApMXkMe4nkw==
+
 "@types/styled-components@5.1.4":
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.4.tgz#11f167dbde268635c66adc89b5a5db2e69d75384"
@@ -8977,7 +8982,14 @@ ospath@^1.2.2:
   resolved "https://registry.yarnpkg.com/ospath/-/ospath-1.2.2.tgz#1276639774a3f8ef2572f7fe4280e0ea4550c07b"
   integrity sha1-EnZjl3Sj+O8lcvf+QoDg6kVQwHs=
 
-overmind@^26.0.0:
+overmind-react@^27.0.0:
+  version "27.0.0"
+  resolved "https://registry.yarnpkg.com/overmind-react/-/overmind-react-27.0.0.tgz#91908468b38b96c2a4fb3fd210709b1cf6e62907"
+  integrity sha512-N3DBkw5HlvBRJO0Zv8M86XeTSHwkfM/79Jv0ZORiT35tflLe5UcrIk9VTB7YLkZUwDR2pHmjiLyHZS0PVQmZDA==
+  dependencies:
+    overmind "26.0.0"
+
+overmind@26.0.0, overmind@^26.0.0:
   version "26.0.0"
   resolved "https://registry.yarnpkg.com/overmind/-/overmind-26.0.0.tgz#53480c09e6b99005f3c814c199531c27eb295bb8"
   integrity sha512-oSHOZgF84eQYNVRdswvwTt88az5Cbif49mH5sA2HcLDzX2oDH1CXDoNxcEGp60sTCryYt09d+3+LcXR1UEumLQ==
@@ -11221,6 +11233,11 @@ stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
+  integrity sha1-jFNOKguDH3K3X8XxEZhXxE711ZM=
 
 stream-browserify@^2.0.1:
   version "2.0.2"
