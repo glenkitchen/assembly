@@ -2,6 +2,7 @@ const nrwlConfig = require('@nrwl/react/plugins/webpack.js');
 const webpack = require('webpack');
 
 module.exports = (config) => {
+  // Add React-specific Nrwl configuration
   nrwlConfig(config);
 
   return {

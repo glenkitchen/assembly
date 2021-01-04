@@ -1,15 +1,27 @@
-import { createOvermind, IConfig, IOnInitialize } from 'overmind';
+import { createOvermind, IAction, IConfig, IOnInitialize } from 'overmind';
+import { createHook } from 'overmind-react';
 import { merge, namespaced } from 'overmind/config';
 import * as preferences from './namespaces/preferences';
-import { state } from './state';
 import { onInitialize } from './onInitialize';
+import { state } from './state';
+import * as actions from './actions';
+import * as effects from './effects';
 
 export const config = merge(
-  { onInitialize, state },
-  namespaced({ preferences })
+  {
+    onInitialize,
+    state,
+    actions,
+    effects,
+  },
+  namespaced({
+    preferences,
+  })
 );
 
 export const overmind = createOvermind(config);
+
+export const useOvermind = createHook<Config>();
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Config
@@ -21,3 +33,11 @@ export interface Config
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface OnInitialize extends IOnInitialize<Config> {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface Action<Input = void, Output = void>
+  extends IAction<Config, Input, Output> {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface AsyncAction<Input = void, Output = void>
+  extends IAction<Config, Input, Promise<Output>> {}

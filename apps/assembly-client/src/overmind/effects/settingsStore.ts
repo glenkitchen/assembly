@@ -17,7 +17,7 @@ export default {
     try {
       if (!(key in settings)) {
         console.warn(
-          `Not updating a preference setting ${key} because it is not in the whitelist`
+          `Not updating setting ${key} because it is not in the whitelist`
         );
         return;
       }

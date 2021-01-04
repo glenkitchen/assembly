@@ -9,10 +9,12 @@ import './main.css';
 import { overmind } from './overmind';
 
 overmind.initialized.then(() => {
+  const theme = overmind.state.preferences.settings.theme;
+
   ReactDOM.render(
     <React.StrictMode>
       <OvermindProvider value={overmind}>
-        <ThemeProvider theme={themes['dark']}>
+        <ThemeProvider theme={themes[theme]}>
           <BrowserRouter>
             <App />
           </BrowserRouter>

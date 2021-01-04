@@ -18,7 +18,7 @@ CDD (Configuration-driven-development) with React
 ## State Management
 
 - React Router
-- Overmind
+- Overmind for global client state
 - React Query
 
 # Appendix
