@@ -15,16 +15,16 @@ export const Header = () => {
         boxSizing: 'border-box',
         fontFamily: 'Inter, sans-serif',
         height: 12,
+        backgroundColor: 'titleBar.activeBackground',
+        color: 'titleBar.activeForeground',
+        borderColor: 'titleBar.border',
         borderBottom: '1px solid',
-        // backgroundColor: 'titleBar.activeBackground',
-        // color: 'titleBar.activeForeground',
-        // borderColor: 'titleBar.border',
       })}
     >
-      {/* <div style={{ width: 26, height: 26 }}>
+      <Stack align="center">
         <HeaderIcon />
-      </div> */}
-      <MenuBar />
+        <MenuBar />
+      </Stack>
     </Stack>
   );
 };

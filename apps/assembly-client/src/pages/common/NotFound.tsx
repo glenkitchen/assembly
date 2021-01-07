@@ -7,7 +7,7 @@ const NotFound: React.FC = () => {
     <Fullscreen
       css={css({
         fontFamily: 'Inter, sans-serif',
-        backgroundColor: 'grays.900',
+        backgroundColor: 'titleBar.activeBackground',
         color: 'white',
       })}
     >

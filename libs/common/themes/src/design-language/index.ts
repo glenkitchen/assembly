@@ -14,6 +14,11 @@ export * from './typography';
 // 9 - 36
 // 10 - 40
 // 11 - 44
+// 12 - 48
+// 13 - 52
+// 14 - 56
+// 15 - 60
+// 16 - 64
 export const space = [
   0,
   4,
@@ -52,3 +57,10 @@ export const sizes = [
   60,
   64,
 ];
+
+export const radii = {
+  small: 2,
+  medium: 4,
+  large: 16,
+  round: '50%',
+};

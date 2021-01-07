@@ -1,9 +1,9 @@
+import css from '@styled-system/css';
 import styled from 'styled-components';
 import { Element } from './Element';
-import css from '@styled-system/css';
 
 export interface StackProps {
-  gap?: number; // theme.space
+  gap?: number;
   direction?: 'horizontal' | 'vertical';
   justify?: React.CSSProperties['justifyContent'];
   align?: React.CSSProperties['alignItems'];
@@ -17,6 +17,7 @@ export const Stack = styled(Element)<StackProps>(
       justifyContent: justify,
       alignItems: align,
 
+      // Styled System theme key: space
       '> *not(:last-child)': {
         [direction === 'horizontal' ? 'marginRight' : 'marginBottom']: gap,
       },

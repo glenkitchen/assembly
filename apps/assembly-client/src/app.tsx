@@ -45,7 +45,7 @@ const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex: auto;
-    /* background-color: ${theme.colors.background};
+    /* background-color: ${theme.colors.green};
     color: white; */
   `}
 `;

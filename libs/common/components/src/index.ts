@@ -1,3 +1,4 @@
+export { Avatar } from './Avatar';
 export * from './Element';
 export * from './Fullscreen';
 export * from './Stack';

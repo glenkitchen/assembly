@@ -36,3 +36,5 @@ CDD (Configuration-driven-development) with React
 - [React.lazy](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting) for route based code splitting?
 - [react-toastify](https://fkhadra.github.io/react-toastify/introduction/) for toasts
 - [react-error-boundary](https://github.com/bvaughn/react-error-boundary) for Error Boundary
+
+## Theming

@@ -14,9 +14,9 @@ export const Text = styled(Element).attrs((props) => ({
   as: ((props as unknown) as { as: string }).as || 'span',
 }))<TextProps>(({ size, align, weight, block }) =>
   css({
-    fontSize: size || 'inherit', //theme
+    fontSize: size || 'inherit', //Styled System theme key: fontSizes
     textAlign: align || 'left',
-    fontWeight: weight || null, // theme
+    fontWeight: weight || null, // Styled System theme key: fontWeights
     lineHeight: 'normal',
     display: block ? 'block' : 'inline',
   })

@@ -10,7 +10,7 @@ export const Editor = () => {
         <title> - Assembly</title>
       </Helmet>
       <Container>
-        <Header></Header>
+        <Header />
       </Container>
     </>
   );

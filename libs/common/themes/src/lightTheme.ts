@@ -4,6 +4,7 @@ import {
   fontWeights,
   space,
   sizes,
+  radii,
 } from './design-language';
 
 export const lightTheme = {
@@ -12,6 +13,7 @@ export const lightTheme = {
   fontWeights,
   space,
   sizes,
+  radii,
 
   fonts: {
     body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
@@ -24,10 +26,5 @@ export const lightTheme = {
   borders: {
     none: 'none',
     thin: '1px solid',
-  },
-  radii: {
-    none: 0,
-    base: '0.25em',
-    round: 99999,
   },
 };
