@@ -4,19 +4,20 @@ import { Element } from './Element';
 import { css } from '@styled-system/css';
 
 export interface TextProps extends React.HtmlHTMLAttributes<HTMLSpanElement> {
-  block?: boolean;
-  align?: string;
   size?: number;
+  align?: string;
   weight?: string;
+  block?: boolean;
 }
 
-export const Text = styled(Element).attrs((p) => ({
-  as: ((p as unknown) as { as: string }).as || 'span',
-}))<TextProps>(({ block, align, weight, size }) =>
+export const Text = styled(Element).attrs((props) => ({
+  as: ((props as unknown) as { as: string }).as || 'span',
+}))<TextProps>(({ size, align, weight, block }) =>
   css({
-    display: block ? 'block' : 'inline',
+    fontSize: size || 'inherit', //theme
     textAlign: align || 'left',
-    fontSize: size || 'inherit', // theme.fontSizes
-    fontWeight: weight || null, // theme.fontWeights
+    fontWeight: weight || null, // theme
+    lineHeight: 'normal',
+    display: block ? 'block' : 'inline',
   })
 );

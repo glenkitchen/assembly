@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import css from '@styled-system/css';
+import styled from 'styled-components';
 
 interface ElementProps {
   margin?: number;

@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import styled, { css } from 'styled-components';
-import { Client, ErrorFallback } from './pages';
+import { Editor, ErrorFallback } from './pages';
 
 const NotFound = lazy(() => import('./pages/common/NotFound'));
 
@@ -15,7 +15,7 @@ const App = () => {
         <Content>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/" element={<Client />} />
+              <Route path="/" element={<Editor />} />
               <Route
                 path="/error"
                 element={

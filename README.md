@@ -13,11 +13,11 @@ CDD (Configuration-driven-development) with React
 
 - [Styled Components](https://styled-components.com/) to style components with actual CSS in JavaScript
 - [Theme UI](https://theme-ui.com/) for themes with constrained design tokens
-- [Styled System](https://styled-system.com/) to write style objects with _theme-aware Styled System shortcuts_
+- [Styled System](https://styled-system.com/) to write style objects with theme-aware Styled System shortcuts
 
 ## State Management
 
-- React Router
+- [React Router v6](https://reacttraining.com/blog/react-router-v6-pre/) for urls
 - Overmind for global client state
 - React Query
 
