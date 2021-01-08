@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { css } from '@styled-system/css';
 import Menu, { SubMenu, MenuItem, Divider } from 'rc-menu';
-import './MenuBar.css';
+// import './MenuBar.css';
 
 export const MenuBar = () => {
   const nestSubMenu = (
@@ -45,83 +46,47 @@ export const MenuBar = () => {
   const dark = false;
 
   const children1 = [
-    //<SubMenu title={<span className="submenu-title-wrapper">One</span>} key="1">
-    //TODO Wrapper
     <SubMenu
-      onMouseEnter={(event) => {
-        console.log(event);
-      }}
-      onMouseLeave={(event) => {
-        console.log(event);
-      }}
-      title="File"
-      key="1"
+      title="Edit"
+      key="2"
       style={{
-        backgroundColor: dark ? 'rgb(204, 204, 204)' : 'inherit',
-        color: 'wheat',
+        backgroundColor: 'black',
+        color: 'white',
+        fontSize: '0.8125rem',
       }}
     >
-      <MenuItem key="1-1">New File</MenuItem>
-      <MenuItem key="1-2">New Sandbox...</MenuItem>
-      <Divider />
-      <MenuItem key="1-3">Save</MenuItem>
-      <MenuItem key="1-4">Save As...</MenuItem>
-      <MenuItem key="1-5">Save All</MenuItem>
-      <Divider />
-      <MenuItem key="1-6">Fork Sandbox</MenuItem>
-      <MenuItem key="1-7">Export to Zip</MenuItem>
-      <Divider />
-      <MenuItem key="1-8">New File</MenuItem>
-      <MenuItem key="1-9">New Sandbox...</MenuItem>
-      <Divider />
-      <MenuItem key="1-10">Auto Save</MenuItem>
-      <SubMenu key="1-11" title="Preferences">
-        <MenuItem key="2-1">Settings</MenuItem>
-        <MenuItem key="2-2">CodeSandbox Settings</MenuItem>
-        <Divider />
-        <MenuItem key="2-3">Keyboard Shortcuts</MenuItem>
-        <Divider />
-        <MenuItem key="2-6">User Snippets</MenuItem>
-        <Divider />
-        <MenuItem key="1-12">Color Theme</MenuItem>
-        <MenuItem key="1-13">File Icon Theme</MenuItem>
-      </SubMenu>
-      <Divider />
-      <MenuItem key="1-12">Revert File</MenuItem>
-      <MenuItem key="1-13">Close Editor</MenuItem>
-    </SubMenu>,
-    <SubMenu title="Edit" key="2">
-      <MenuItem key="_2-1">Undo</MenuItem>
-    </SubMenu>,
-    <SubMenu title="Selection" key="3"></SubMenu>,
-    <SubMenu title="View" key="4"></SubMenu>,
-    <SubMenu title="Go" key="5"></SubMenu>,
-    <SubMenu title="Help" key="6"></SubMenu>,
-  ];
-
-  return (
-    <Container>
-      <Menu
-        onClick={(menuInfo) => {
-          console.log(menuInfo);
-        }}
-        mode="horizontal"
-        // expandIcon={<span>Mes</span>}
-        //TODO use theme
-        // Submenu portal
+      <MenuItem
+        key="_2-1"
         style={{
           backgroundColor: 'black',
           color: 'white',
-          fontFamily: 'sans-serif',
-          borderBottom: '2px solid gray',
-          height: 38,
           fontSize: '0.8125rem',
+          cursor: 'pointer',
         }}
-        className="test"
       >
-        {children1}
-      </Menu>
-    </Container>
+        Undo
+      </MenuItem>
+    </SubMenu>,
+  ];
+
+  return (
+    <Menu
+      onClick={(menuInfo) => {
+        console.log(menuInfo);
+      }}
+      mode="horizontal"
+      // expandIcon={<span>Mes</span>}
+      style={{
+        backgroundColor: 'black',
+        color: 'white',
+        fontSize: '0.8125rem',
+      }}
+      // getPopupContainer={(parent) => {
+      //   return (parent as any).menuPopUpContainer;
+      // }}
+    >
+      {children1}
+    </Menu>
   );
 };
 
@@ -145,3 +110,40 @@ export const Child = styled.div`
   height: 38px;
   font-size: 0.8125rem;
 `;
+
+//  <MenuItem key="1-1">New File</MenuItem>
+//       <MenuItem key="1-2">New Sandbox...</MenuItem>
+//       <Divider />
+//       <MenuItem key="1-3">Save</MenuItem>
+//       <MenuItem key="1-4">Save As...</MenuItem>
+//       <MenuItem key="1-5">Save All</MenuItem>
+//       <Divider />
+//       <MenuItem key="1-6">Fork Sandbox</MenuItem>
+//       <MenuItem key="1-7">Export to Zip</MenuItem>
+//       <Divider />
+//       <MenuItem key="1-8">New File</MenuItem>
+//       <MenuItem key="1-9">New Sandbox...</MenuItem>
+//       <Divider />
+//       <MenuItem key="1-10">Auto Save</MenuItem>
+//       <SubMenu key="1-11" title="Preferences">
+//         <MenuItem key="2-1">Settings</MenuItem>
+//         <MenuItem key="2-2">CodeSandbox Settings</MenuItem>
+//         <Divider />
+//         <MenuItem key="2-3">Keyboard Shortcuts</MenuItem>
+//         <Divider />
+//         <MenuItem key="2-6">User Snippets</MenuItem>
+//         <Divider />
+//         <MenuItem key="1-12">Color Theme</MenuItem>
+//         <MenuItem key="1-13">File Icon Theme</MenuItem>
+//       </SubMenu>
+//       <Divider />
+//       <MenuItem key="1-12">Revert File</MenuItem>
+//       <MenuItem key="1-13">Close Editor</MenuItem>
+//     </SubMenu>,
+//     <SubMenu title="Edit" key="2">
+//       <MenuItem key="_2-1">Undo</MenuItem>
+//     </SubMenu>
+//     <SubMenu title="Selection" key="3"></SubMenu>,
+//     <SubMenu title="View" key="4"></SubMenu>,
+//     <SubMenu title="Go" key="5"></SubMenu>,
+//     <SubMenu title="Help" key="6"></SubMenu>,

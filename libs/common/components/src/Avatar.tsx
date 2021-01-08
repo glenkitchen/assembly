@@ -1,29 +1,38 @@
-import { Element } from './Element';
+import { Tooltip } from '@material-ui/core';
 import { css } from '@styled-system/css';
 import React from 'react';
 import styled from 'styled-components';
+import { Element } from './Element';
 
 interface AvatarProps {
   imageUrl: string;
   userName: string;
+  tooltipTitle?: string;
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ imageUrl, userName }) => {
+export const Avatar: React.FC<AvatarProps> = ({
+  imageUrl,
+  userName,
+  tooltipTitle,
+}) => {
   return (
-    <AvatarContainer>
-      <AvatarImage src={imageUrl} alt={userName} />
-    </AvatarContainer>
+    <Tooltip title={tooltipTitle}>
+      <span>
+        <AvatarContainer>
+          <AvatarImage src={imageUrl} alt={userName} />
+        </AvatarContainer>
+      </span>
+    </Tooltip>
   );
 };
 
-//const AvatarContainer = styled(Element).attrs({ as: 'span' })(
-const AvatarContainer = styled(Element)(() =>
+const AvatarContainer = styled(Element)(
   css({
     display: 'inline-block',
-    height: 8, // Styled System Theme Key: sizes
-    width: 8, // Styled System Theme Key: sizes
+    height: 8, // Theme Key: sizes
+    width: 8, // Theme Key: sizes
     position: 'relative',
-    flexShrink: 0, // avatars should never shrink inside flex
+    color: 'transparent',
   })
 );
 
@@ -32,7 +41,7 @@ const AvatarImage = styled.img(() =>
     height: '100%',
     width: '100%',
     boxSizing: 'border-box',
-    borderRadius: 'small', // Styled System Theme Key: radii
+    borderRadius: 'small', // Theme Key: radii
     border: '1px solid',
   })
 );

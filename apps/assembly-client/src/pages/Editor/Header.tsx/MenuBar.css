@@ -105,6 +105,9 @@
 }
 .rc-menu-submenu > .rc-menu {
   /* background-color: #fff; */
+  background-color: 'black';
+  color: 'white';
+  font-family: 'sans-serif';
 }
 .rc-menu .rc-menu-submenu-title .anticon,
 .rc-menu .rc-menu-item .anticon {

@@ -1,7 +1,7 @@
 import css from '@styled-system/css';
 import styled from 'styled-components';
 
-interface ElementProps {
+export interface ElementProps {
   margin?: number;
   marginX?: number;
   marginY?: number;

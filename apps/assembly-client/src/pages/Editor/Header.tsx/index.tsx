@@ -1,6 +1,5 @@
-import { Stack } from '@assembly/common/components';
+import { Icon, Avatar, Stack } from '@assembly/common/components';
 import React from 'react';
-import { HeaderIcon } from './HeaderIcon';
 import { MenuBar } from './MenuBar';
 import css from '@styled-system/css';
 
@@ -13,7 +12,6 @@ export const Header = () => {
       paddingX={2}
       css={css({
         boxSizing: 'border-box',
-        fontFamily: 'Inter, sans-serif',
         height: 12,
         backgroundColor: 'titleBar.activeBackground',
         color: 'titleBar.activeForeground',
@@ -22,7 +20,12 @@ export const Header = () => {
       })}
     >
       <Stack align="center">
-        <HeaderIcon />
+        <Avatar
+          imageUrl="https://avatars3.githubusercontent.com/u/9795765?v=4"
+          userName="glenkitchen"
+          tooltipTitle="To Dashboard"
+        />
+        <Icon name="backArrow" />
         <MenuBar />
       </Stack>
     </Stack>
