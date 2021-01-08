@@ -9,30 +9,40 @@ import {
 } from './design-language';
 
 export const darkTheme = {
-  colors: {
-    ...colors,
-    titleBar: {
-      activeBackground: 'rgb(28, 32, 34)',
-      activeForeground: 'rgb(204, 204, 204)',
-      borderColor: 'rgb(45, 45, 45);',
-    },
-  },
   fontSizes,
   fontWeights,
   space,
   sizes,
   radii,
+  colors: {
+    titleBar: {
+      activeBackground: colors.grays[500],
+      activeForeground: colors.white,
+      inactiveBackground: 'rgb(28, 32, 34)',
+      inactiveForeground: 'rgb(204, 204, 204)',
+      border: 'rgb(45, 45, 45)',
+      divider: colors.gray,
+    },
+  },
 
-  fonts: {
-    body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-    heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.1,
-  },
-  borders: {
-    none: 'none',
-    thin: '1px solid',
-  },
+  // style prop functions
+  menu: (active: boolean) => ({
+    backgroundColor: active ? colors.grays[500] : 'rgb(28, 32, 34)',
+    color: active ? colors.white : 'rgb(204, 204, 204)',
+    fontSize: '0.8125rem',
+  }),
+
+  //TODO
+  // fonts: {
+  //   body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //   heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+  // },
+  // lineHeights: {
+  //   body: 1.5,
+  //   heading: 1.1,
+  // },
+  // borders: {
+  //   none: 'none',
+  //   thin: '1px solid',
+  // },
 };

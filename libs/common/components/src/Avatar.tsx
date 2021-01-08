@@ -16,7 +16,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   tooltipTitle,
 }) => {
   return (
-    <Tooltip title={tooltipTitle}>
+    <Tooltip title={tooltipTitle} arrow>
       <span>
         <AvatarContainer>
           <AvatarImage src={imageUrl} alt={userName} />

@@ -13,20 +13,24 @@ export const Header = () => {
       css={css({
         boxSizing: 'border-box',
         height: 12,
-        backgroundColor: 'titleBar.activeBackground',
-        color: 'titleBar.activeForeground',
+        backgroundColor: 'titleBar.inactiveBackground',
+        color: 'titleBar.inactiveForeground',
         borderColor: 'titleBar.border',
         borderBottom: '1px solid',
       })}
     >
       <Stack align="center">
-        <Avatar
-          imageUrl="https://avatars3.githubusercontent.com/u/9795765?v=4"
-          userName="glenkitchen"
-          tooltipTitle="To Dashboard"
-        />
+        <div style={{ paddingTop: 4 }}>
+          <Avatar
+            imageUrl="https://avatars3.githubusercontent.com/u/9795765?v=4"
+            userName="glenkitchen"
+            tooltipTitle="To Dashboard"
+          />
+        </div>
         <Icon name="backArrow" />
-        <MenuBar />
+        <div style={{ paddingBottom: 20 }}>
+          <MenuBar />
+        </div>
       </Stack>
     </Stack>
   );
