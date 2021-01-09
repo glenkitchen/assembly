@@ -1,6 +1,7 @@
-import React from 'react';
-import { Fullscreen, Text } from '@assembly/common/components';
+import { Fullscreen } from '@assembly/common/components';
+import { Typography } from '@material-ui/core';
 import { css } from '@styled-system/css';
+import React from 'react';
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
@@ -10,12 +11,14 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
         color: 'white',
       })}
     >
-      <Text size={40} weight="bold" marginBottom={100}>
+      <Typography style={{ marginBottom: 80 }} variant="h3">
         Oh no! Something broke!
-      </Text>
+      </Typography>
+
       <svg
         width={64 * 3}
         height={64 * 3}
+        style={{ marginBottom: 40 }}
         viewBox="0 0 58 58"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -49,10 +52,10 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
           </g>
         </g>
       </svg>
-      <Text size={30} marginTop={12}>
+
+      <Typography style={{}} variant="h4">
         {error.message}
-      </Text>
-      {/* <button onClick={resetErrorBoundary}>Try again</button> */}
+      </Typography>
     </Fullscreen>
   );
 };

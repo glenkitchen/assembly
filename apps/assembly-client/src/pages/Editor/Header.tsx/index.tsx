@@ -1,8 +1,8 @@
-import { Stack, Text } from '@assembly/common/components';
+import { Stack } from '@assembly/common/components';
+import { Avatar, Typography } from '@material-ui/core';
 import css from '@styled-system/css';
 import React from 'react';
 import { Actions } from './Actions';
-import { HeaderIcon } from './HeaderIcon';
 import { MenuBar } from './MenuBar';
 
 export const Header = () => {
@@ -23,14 +23,17 @@ export const Header = () => {
       })}
     >
       <Stack align="center">
-        <div style={{ marginTop: 4 }}>
-          <HeaderIcon />
-        </div>
+        <Avatar
+          src="https://avatars3.githubusercontent.com/u/9795765?v=4"
+          alt="glenkitchen"
+          variant="square"
+          style={{ borderRadius: 2, width: 36, height: 36 }}
+        />
         <div style={{ paddingBottom: 14 }}>
           <MenuBar />
         </div>
       </Stack>
-      <Text>tenant-name</Text>
+      <Typography variant="body2">tenant-name</Typography>
       <Actions />
     </Stack>
   );

@@ -1,4 +1,5 @@
 import { Fullscreen, Text } from '@assembly/common/components';
+import { Typography } from '@material-ui/core';
 import { css } from '@styled-system/css';
 import React from 'react';
 
@@ -10,17 +11,17 @@ const NotFound: React.FC = () => {
         color: 'white',
       })}
     >
-      <Text size={152} weight="bold" marginBottom={100}>
+      <Typography style={{ fontSize: '10rem', marginBottom: 100 }}>
         404
-      </Text>
+      </Typography>
 
-      <Text size={7} weight="bold" marginBottom={6}>
+      <Typography style={{ marginBottom: 24 }} variant="h4">
         Whoops, page not found
-      </Text>
+      </Typography>
 
-      <Text size={6} marginBottom={12}>
+      <Typography variant="h5">
         We can’t seem to find the page you’re looking for
-      </Text>
+      </Typography>
     </Fullscreen>
   );
 };
