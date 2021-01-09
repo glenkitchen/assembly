@@ -2,6 +2,7 @@ import Menu, {
   Divider as RCDivider,
   MenuItem as RCMenuItem,
   SubMenu as RCSubMenu,
+  SubMenuProps,
 } from 'rc-menu';
 import React, { useState } from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
@@ -59,26 +60,36 @@ export const MenuBar = () => {
   );
 };
 
-const SubMenu = ({ children, ...props }) => {
+const SubMenu: React.FC<SubMenuProps> = ({ children, ...props }) => {
   const [active, setActive] = useState(false);
 
   return (
-    <ThemeConsumer>
-      {(theme) => {
-        return (
-          <RCSubMenu
-            onMouseEnter={() => setActive(true)}
-            onMouseLeave={() => setActive(false)}
-            {...props}
-            style={theme.menu(active)}
-          >
-            {children}
-          </RCSubMenu>
-        );
-      }}
-    </ThemeConsumer>
+    <StyledSubmenu
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      isActive={active}
+      {...props}
+    >
+      {children}
+    </StyledSubmenu>
   );
 };
+
+interface StyledSubmenuProps {
+  // SubMenuProps already has a propery named active,
+  // so use the name isActive.
+  isActive?: boolean;
+}
+
+const StyledSubmenu = styled(RCSubMenu)<StyledSubmenuProps>(
+  ({ isActive }: StyledSubmenuProps) => {
+    return css({
+      backgroundColor: isActive ? 'grays.500' : 'rgb(28, 32, 34)',
+      color: isActive ? 'white' : 'rgb(204, 204, 204)',
+      fontSize: '0.8125rem',
+    });
+  }
+);
 
 const MenuItem = ({ children, ...props }) => {
   const [active, setActive] = useState(false);

@@ -1,7 +1,5 @@
 import { Button, Stack } from '@assembly/common/components';
-import React, { useState } from 'react';
-import { css } from '@styled-system/css';
-import { EmbedIcon } from './icons';
+import React from 'react';
 
 export const Actions = () => {
   //const [fadeIn, setFadeIn] = useState(false);
@@ -10,20 +8,19 @@ export const Actions = () => {
     <Stack
       align="center"
       gap={2}
-      css={{ '> button': { width: 'auto' } }}
       //   style={{
       //     opacity: fadeIn ? 1 : 0,
       //     transition: 'opacity 0.25s ease-in-out',
       //   }}
     >
-      <Button>Update available</Button>
-      <Button>
+      {/* <MyButton>
         Like Assembly<span>2</span>
-      </Button>
-      <Button>
-        {/* <EmbedIcon css={css({ height: 3, marginRight: 1 })} /> */}
+      </MyButton>
+      <MyButton>        
         Share
-      </Button>
+      </MyButton> */}
+
+      <Button>Create App</Button>
     </Stack>
   );
 };

@@ -15,11 +15,12 @@ export const Header = () => {
       css={css({
         boxSizing: 'border-box',
         height: 12,
-        backgroundColor: 'titleBar.inactiveBackground',
-        color: 'titleBar.inactiveForeground',
-        borderColor: 'titleBar.border',
-        borderBottom: '1px solid',
+        backgroundColor: 'header.backgroundColor',
+        color: 'header.color',
+        borderBottom: '2px solid',
+        borderColor: 'header.borderColor',
         fontSize: '0.8125rem',
+        zIndex: 10,
       })}
     >
       <Stack align="center">
@@ -33,7 +34,7 @@ export const Header = () => {
           <MenuBar />
         </div>
       </Stack>
-      <Typography variant="body2">tenant-name</Typography>
+      <Typography style={{ fontSize: '0.85rem' }}>tenant-name</Typography>
       <Actions />
     </Stack>
   );
