@@ -1,7 +1,9 @@
-import { Icon, Avatar, Stack } from '@assembly/common/components';
-import React from 'react';
-import { MenuBar } from './MenuBar';
+import { Stack, Text } from '@assembly/common/components';
 import css from '@styled-system/css';
+import React from 'react';
+import { Actions } from './Actions';
+import { HeaderIcon } from './HeaderIcon';
+import { MenuBar } from './MenuBar';
 
 export const Header = () => {
   return (
@@ -17,21 +19,19 @@ export const Header = () => {
         color: 'titleBar.inactiveForeground',
         borderColor: 'titleBar.border',
         borderBottom: '1px solid',
+        fontSize: '0.8125rem',
       })}
     >
       <Stack align="center">
-        <div style={{ paddingTop: 4 }}>
-          <Avatar
-            imageUrl="https://avatars3.githubusercontent.com/u/9795765?v=4"
-            userName="glenkitchen"
-            tooltipTitle="To Dashboard"
-          />
+        <div style={{ marginTop: 4 }}>
+          <HeaderIcon />
         </div>
-        <Icon name="backArrow" />
-        <div style={{ paddingBottom: 20 }}>
+        <div style={{ paddingBottom: 14 }}>
           <MenuBar />
         </div>
       </Stack>
+      <Text>tenant-name</Text>
+      <Actions />
     </Stack>
   );
 };

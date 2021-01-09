@@ -3,6 +3,10 @@ body {
   font-family: sans-serif;
 }
 
+/**************************************
+*** react-toastify 
+***************************************/
+
 .Toastify__toast-container {
   z-index: 9999;
   -webkit-transform: translateZ(9999px);
@@ -529,6 +533,10 @@ body {
 .Toastify__slide-exit--bottom-center {
   animation-name: Toastify__slideOutDown;
 }
+
+/**************************************
+*** rc-menu 
+***************************************/
 
 @font-face {
   font-family: 'FontAwesome';

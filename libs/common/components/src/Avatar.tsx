@@ -29,8 +29,8 @@ export const Avatar: React.FC<AvatarProps> = ({
 const AvatarContainer = styled(Element)(
   css({
     display: 'inline-block',
-    height: 8, // Theme Key: sizes
-    width: 8, // Theme Key: sizes
+    height: 8,
+    width: 8,
     position: 'relative',
     color: 'transparent',
   })
@@ -41,7 +41,7 @@ const AvatarImage = styled.img(() =>
     height: '100%',
     width: '100%',
     boxSizing: 'border-box',
-    borderRadius: 'small', // Theme Key: radii
+    borderRadius: 'small',
     border: '1px solid',
   })
 );

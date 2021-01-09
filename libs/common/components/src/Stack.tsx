@@ -17,8 +17,7 @@ export const Stack = styled(Element)<StackProps>(
       justifyContent: justify,
       alignItems: align,
 
-      // Styled System theme key: space
-      '> *not(:last-child)': {
+      '> *:not(:last-child)': {
         [direction === 'horizontal' ? 'marginRight' : 'marginBottom']: gap,
       },
     })

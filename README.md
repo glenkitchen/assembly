@@ -12,7 +12,6 @@ CDD (Configuration-driven-development) with React
 ## Styling and Themes
 
 - [Styled Components](https://styled-components.com/) to style components with actual CSS in JavaScript
-- [Theme UI](https://theme-ui.com/) for themes with constrained design tokens
 - [Styled System](https://styled-system.com/) to write style objects with theme-aware Styled System shortcuts
 
 ## State Management

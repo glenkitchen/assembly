@@ -1,7 +1,7 @@
 export const colors = {
   white: '#ffffff',
   grays: {
-    100: '#fff9f9',
+    100: '#fff9f9', // lighter
     200: '#e6e6e6',
     300: '#999999',
     400: '#757575',
@@ -9,7 +9,7 @@ export const colors = {
     600: '#242424',
     700: '#151515',
     800: '#111111',
-    900: '#040404',
+    900: '#040404', // darker
   },
   blues: {
     300: '#6CC7F6', // Teal
@@ -26,5 +26,4 @@ export const colors = {
   purple: '#BF5AF2',
   yellow: '#FBCC43',
   orange: '#f69935',
-  gray: 'gray',
 };

@@ -6,7 +6,6 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <Fullscreen
       css={css({
-        fontFamily: 'Inter, sans-serif',
         backgroundColor: 'grays.900',
         color: 'white',
       })}

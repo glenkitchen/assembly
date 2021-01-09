@@ -1,4 +1,5 @@
 export { Avatar } from './Avatar';
+export { Button } from './Button';
 export * from './Element';
 export { Icon } from './Icons';
 export * from './Fullscreen';
