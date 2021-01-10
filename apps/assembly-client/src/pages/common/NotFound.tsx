@@ -1,4 +1,4 @@
-import { Fullscreen, Text } from '@assembly/common/components';
+import { Fullscreen } from '@assembly/common/components';
 import { Typography } from '@material-ui/core';
 import { css } from '@styled-system/css';
 import React from 'react';

@@ -12,15 +12,16 @@ overmind.initialized.then(() => {
   const theme = overmind.state.preferences.settings.theme;
 
   ReactDOM.render(
-    // <React.StrictMode>
-    <OvermindProvider value={overmind}>
-      <ThemeProvider theme={themes[theme]}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
-    </OvermindProvider>,
-    // </React.StrictMode>,
+    <React.StrictMode>
+      <OvermindProvider value={overmind}>
+        <ThemeProvider theme={themes[theme]}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </OvermindProvider>
+      ,
+    </React.StrictMode>,
     document.getElementById('root')
   );
 });

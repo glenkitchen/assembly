@@ -1,12 +1,13 @@
+import { css } from '@styled-system/css';
 import Menu, {
   Divider as RCDivider,
   MenuItem as RCMenuItem,
+  MenuItemProps,
   SubMenu as RCSubMenu,
   SubMenuProps,
 } from 'rc-menu';
 import React, { useState } from 'react';
-import styled, { ThemeConsumer } from 'styled-components';
-import { css } from '@styled-system/css';
+import styled from 'styled-components';
 
 export const MenuBar = () => {
   return (
@@ -84,36 +85,50 @@ interface StyledSubmenuProps {
 const StyledSubmenu = styled(RCSubMenu)<StyledSubmenuProps>(
   ({ isActive }: StyledSubmenuProps) => {
     return css({
-      backgroundColor: isActive ? 'grays.500' : 'rgb(28, 32, 34)',
-      color: isActive ? 'white' : 'rgb(204, 204, 204)',
+      backgroundColor: isActive
+        ? 'header.activeBackgroundColor'
+        : 'header.backgroundColor',
+      color: isActive ? 'header.activeColor' : 'header.color',
       fontSize: '0.8125rem',
     });
   }
 );
 
-const MenuItem = ({ children, ...props }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ children, ...props }) => {
   const [active, setActive] = useState(false);
 
   return (
-    <ThemeConsumer>
-      {(theme) => {
-        return (
-          <RCMenuItem
-            onMouseEnter={() => setActive(true)}
-            onMouseLeave={() => setActive(false)}
-            {...props}
-            style={theme.menu(active)}
-          >
-            {children}
-          </RCMenuItem>
-        );
-      }}
-    </ThemeConsumer>
+    <StyledMenuItem
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      isActive={active}
+      {...props}
+    >
+      {children}
+    </StyledMenuItem>
   );
 };
 
+interface StyledMenuItemProps {
+  // MenuItemProps already has a propery named active,
+  // so use the name isActive.
+  isActive?: boolean;
+}
+
+const StyledMenuItem = styled(RCMenuItem)<StyledMenuItemProps>(
+  ({ isActive }: StyledMenuItemProps) => {
+    return css({
+      backgroundColor: isActive
+        ? 'header.activeBackgroundColor'
+        : 'header.backgroundColor',
+      color: isActive ? 'header.activeColor' : 'header.color',
+      fontSize: '0.8125rem',
+    });
+  }
+);
+
 const Divider = styled(RCDivider)(
   css({
-    backgroundColor: 'titleBar.divider',
+    backgroundColor: 'header.bordercolor',
   })
 );

@@ -15,23 +15,17 @@ export const darkTheme = {
       hoverBackground:
         'linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), rgb(45, 45, 45)',
       disabledColor: 'rgb(192, 192, 192)',
+      secondaryBackgroundColor: colors.black, //TODO
+      secondaryColor: colors.green, //TODO
     },
     header: {
       backgroundColor: 'rgb(28, 32, 34)',
       color: 'rgb(204, 204, 204)',
-      activeBackgroundColor: 'rgb(28, 32, 34)',
-      activeColor: 'rgb(204, 204, 204)',
+      activeBackgroundColor: colors.grays[500],
+      activeColor: colors.white,
       bordercolor: colors.grays[400],
-      menuDivider: colors.grays[400],
     },
   },
-
-  // style prop functions
-  menu: (active: boolean) => ({
-    backgroundColor: active ? colors.grays[500] : 'rgb(28, 32, 34)',
-    color: active ? colors.white : 'rgb(204, 204, 204)',
-    fontSize: '0.8125rem',
-  }),
 
   //TODO
   // fonts: {
