@@ -25,6 +25,9 @@ const StyledButton = styled(MuiButton)<ButtonProps>(({ color }) => {
   return css({
     textTransform: 'none',
     fontSize: '0.85rem',
+    paddingX: 2,
+    paddingY: 1,
+    minWidth: 0,
     backgroundColor:
       color === 'secondary'
         ? 'button.secondaryBackgroundColor'

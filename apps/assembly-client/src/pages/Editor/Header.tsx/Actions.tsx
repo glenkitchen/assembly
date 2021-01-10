@@ -1,4 +1,5 @@
-import { Button, Stack } from '@assembly/common/components';
+import { Button, Icon, Stack } from '@assembly/common/components';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import React from 'react';
 
 export const Actions = () => {
@@ -13,14 +14,17 @@ export const Actions = () => {
       //     transition: 'opacity 0.25s ease-in-out',
       //   }}
     >
-      {/* <MyButton>
-        Like Assembly<span>2</span>
-      </MyButton>
-      <MyButton>        
-        Share
-      </MyButton> */}
-
-      <Button> Create App</Button>
+      <Button>Create App</Button>
+      <Button>
+        <NotificationsIcon
+          style={{
+            color: 'rgb(204, 204, 204)',
+            width: 20,
+            height: 20,
+          }}
+        />
+      </Button>
+      <Button>Kebab Menu</Button>
     </Stack>
   );
 };

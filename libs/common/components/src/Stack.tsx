@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Element } from './Element';
 
 export interface StackProps {
-  gap?: number;
   direction?: 'horizontal' | 'vertical';
   justify?: React.CSSProperties['justifyContent'];
   align?: React.CSSProperties['alignItems'];
+  gap?: number;
 }
 
 export const Stack = styled(Element)<StackProps>(
-  ({ gap = 0, direction = 'horizontal', justify, align }) =>
+  ({ direction = 'horizontal', justify, align, gap = 0 }) =>
     css({
       display: 'flex',
       flexDirection: direction === 'horizontal' ? 'row' : 'column',
