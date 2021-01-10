@@ -13,7 +13,12 @@ import { css } from '@styled-system/css';
 export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <StylesProvider injectFirst>
-      <StyledButton disableRipple size="small" {...props}>
+      <StyledButton
+        disableRipple
+        size="small"
+        {...props}
+        isText={typeof children === 'string'}
+      >
         {children}
       </StyledButton>
     </StylesProvider>
@@ -21,22 +26,25 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
 };
 
 // Styled & Themed Inner Compoment
-const StyledButton = styled(MuiButton)<ButtonProps>(({ color }) => {
-  return css({
-    textTransform: 'none',
-    fontSize: '0.85rem',
-    paddingX: 2,
-    paddingY: 1,
-    minWidth: 0,
-    backgroundColor:
-      color === 'secondary'
-        ? 'button.secondaryBackgroundColor'
-        : 'button.backgroundColor',
-    color: color === 'secondary' ? 'button.secondaryColor' : 'button.color',
-    ':hover': {
-      // background is not a Styled System shortcut, so just use the theme prop
-      background: (theme) => theme.colors.button.hoverBackground,
-    },
-    ':disabled': { color: 'button.disabledColor' },
-  });
-});
+const StyledButton = styled(MuiButton)<ButtonProps & { isText?: boolean }>(
+  ({ isText, color }) => {
+    return css({
+      textTransform: 'none',
+      fontSize: '0.85rem',
+      paddingX: isText ? 2 : 1,
+      paddingY: 1,
+      minWidth: 0,
+      whiteSpace: 'nowrap',
+      backgroundColor:
+        color === 'secondary'
+          ? 'button.secondaryBackgroundColor'
+          : 'button.backgroundColor',
+      color: color === 'secondary' ? 'button.secondaryColor' : 'button.color',
+      ':hover': {
+        // background is not a Styled System shortcut, so just use the theme prop
+        background: (theme) => theme.colors.button.hoverBackground,
+      },
+      ':disabled': { color: 'button.disabledColor' },
+    });
+  }
+);

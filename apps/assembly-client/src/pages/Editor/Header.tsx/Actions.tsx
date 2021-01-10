@@ -1,4 +1,5 @@
-import { Button, Icon, Stack } from '@assembly/common/components';
+import { Button, Stack } from '@assembly/common/components';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import React from 'react';
 
@@ -16,15 +17,16 @@ export const Actions = () => {
     >
       <Button>Create App</Button>
       <Button>
-        <NotificationsIcon
-          style={{
-            color: 'rgb(204, 204, 204)',
-            width: 20,
-            height: 20,
-          }}
-        />
+        <NotificationsIcon style={IconStyle} />
       </Button>
-      <Button>Kebab Menu</Button>
+      <Button>
+        <MoreVertIcon style={IconStyle} />
+      </Button>
     </Stack>
   );
+};
+
+const IconStyle = {
+  width: 20,
+  height: 20,
 };
