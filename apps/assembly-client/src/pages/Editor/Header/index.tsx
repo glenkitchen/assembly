@@ -17,10 +17,10 @@ export const Header = () => {
         height: 12,
         backgroundColor: 'header.backgroundColor',
         color: 'header.color',
-        borderBottom: '2px solid',
+        borderBottom: '1px solid',
         borderColor: 'header.borderColor',
         fontSize: '0.8125rem',
-        zIndex: 10,
+        // zIndex: 10,
       })}
     >
       <Stack align="center">

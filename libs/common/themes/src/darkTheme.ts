@@ -9,6 +9,23 @@ export const darkTheme = {
   //radii,
   colors: {
     ...colors,
+    header: {
+      backgroundColor: 'rgb(28, 32, 34)',
+      color: 'rgb(204, 204, 204)',
+      activeBackgroundColor: colors.grays[500],
+      activeColor: colors.white,
+      borderColor: colors.grays[400],
+    },
+    navigationBar: {
+      backgroundColor: 'rgb(28, 32, 34)',
+      color: 'rgb(204, 204, 204)',
+      borderColor: colors.grays[400],
+    },
+    statusBar: {
+      backgroundColor: 'rgb(28, 32, 34)',
+      color: 'rgb(204, 204, 204)',
+      borderColor: colors.grays[400],
+    },
     button: {
       backgroundColor: colors.black,
       color: 'rgb(192, 192, 192)',
@@ -17,13 +34,6 @@ export const darkTheme = {
       disabledColor: 'rgb(192, 192, 192)',
       secondaryBackgroundColor: colors.black, //TODO
       secondaryColor: colors.green, //TODO
-    },
-    header: {
-      backgroundColor: 'rgb(28, 32, 34)',
-      color: 'rgb(204, 204, 204)',
-      activeBackgroundColor: colors.grays[500],
-      activeColor: colors.white,
-      bordercolor: colors.grays[400],
     },
   },
 
