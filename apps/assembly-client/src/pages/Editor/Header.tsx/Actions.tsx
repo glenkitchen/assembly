@@ -1,7 +1,9 @@
 import { Button, Stack } from '@assembly/common/components';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import { Tooltip } from '@material-ui/core';
+import Brightness6Icon from '@material-ui/icons/Brightness6';
 import React from 'react';
+import { ActionsMenu } from './ActionsMenu';
+import { Notifications } from './Notifications';
 
 export const Actions = () => {
   //const [fadeIn, setFadeIn] = useState(false);
@@ -16,17 +18,20 @@ export const Actions = () => {
       //   }}
     >
       <Button>Create App</Button>
-      <Button>
-        <NotificationsIcon style={IconStyle} />
-      </Button>
-      <Button>
-        <MoreVertIcon style={IconStyle} />
-      </Button>
+      <Tooltip title="Toggle Notifications">
+        <Notifications />
+      </Tooltip>
+      <Tooltip title="Toggle Dark/Light Theme">
+        <Button>
+          <Brightness6Icon style={IconStyle} />
+        </Button>
+      </Tooltip>
+      <ActionsMenu />
     </Stack>
   );
 };
 
-const IconStyle = {
+export const IconStyle = {
   width: 20,
   height: 20,
 };
