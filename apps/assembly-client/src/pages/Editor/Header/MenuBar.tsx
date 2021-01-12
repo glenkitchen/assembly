@@ -129,6 +129,6 @@ const StyledMenuItem = styled(RCMenuItem)<StyledMenuItemProps>(
 
 const Divider = styled(RCDivider)(
   css({
-    backgroundColor: 'header.bordercolor',
+    backgroundColor: 'header.borderColor',
   })
 );

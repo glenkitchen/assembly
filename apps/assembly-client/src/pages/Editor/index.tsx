@@ -1,59 +1,121 @@
+import { Stack } from '@assembly/common/components';
+import css from '@styled-system/css';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Header } from './Header';
 import { NavigationBar } from './NavigationBar';
 import { StatusBar } from './StatusBar';
-import SplitPane from 'react-split-pane';
 
 export const Editor = () => {
   return (
     <>
-      <Helmet>
-        <title> - Assembly</title>
-      </Helmet>
+      <Title />
       <Container>
-        <Header />
-        <Fullscreen>
+        <HeaderContainer>
+          <Header />
+        </HeaderContainer>
+        <NavigationBarContainer>
           <NavigationBar />
-          <SplitPaneContainer>
-            <div>One</div>
-            {/* <SplitPane>
+        </NavigationBarContainer>
+        <SplitPaneContainer>
+          <div>One</div>
+          {/* <SplitPane>
               <div>one</div>
               <div>two</div>
             </SplitPane> */}
-          </SplitPaneContainer>
+        </SplitPaneContainer>
+        <StatusBarContainer>
           <StatusBar />
-        </Fullscreen>
+        </StatusBarContainer>
       </Container>
     </>
   );
 };
 
-const Container = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  //width: 100%; //
-  //height: 100%; //
-`;
+const Title = () => (
+  <Helmet>
+    <title> - Assembly</title>
+  </Helmet>
+);
 
-const Fullscreen = styled.div`
-  //display: flex; ////
-  //flex: auto; //
-  //width: 100%; //
-  height: 100%;
-  background-color: red;
-`;
+const Container = styled.div(
+  css({
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+  })
+);
 
-const SplitPaneContainer = styled.div`
-  position: fixed;
-  top: 48px;
-  bottom: 22px;
-  right: 0;
-  left: calc(3.5rem + 1px);
-  //height: auto; //
-  background-color: green;
-`;
+const HeaderContainer = ({ children }) => (
+  <Stack
+    as="header"
+    justify="space-between"
+    align="center"
+    paddingX={2}
+    css={css({
+      height: 12,
+      fontSize: '0.8125rem',
+      backgroundColor: 'header.backgroundColor',
+      color: 'header.color',
+      borderBottom: '1px solid',
+      borderColor: 'header.borderColor',
+    })}
+  >
+    {children}
+  </Stack>
+);
+
+const SplitPaneContainer = styled.div(
+  css({
+    position: 'fixed',
+    top: 48,
+    right: 0,
+    bottom: 22,
+    left: 'calc(3.5rem + 1px)',
+    backgroundColor: 'green',
+  })
+);
+
+const NavigationBarContainer = ({ children }) => (
+  <Stack
+    direction="vertical"
+    align="center"
+    gap={4}
+    padding={2}
+    css={css({
+      position: 'fixed',
+      top: 48,
+      bottom: 22,
+      left: 0,
+      backgroundColor: 'navigationBar.backgroundColor',
+      color: 'navigationBar.color',
+      borderRight: '1px solid',
+      borderColor: 'navigationBar.borderColor',
+    })}
+  >
+    {children}
+  </Stack>
+);
+
+const StatusBarContainer = ({ children }) => (
+  <Stack
+    justify="space-between"
+    align="center"
+    css={css({
+      height: 22,
+      position: 'fixed',
+      bottom: 0,
+      right: 0,
+      left: 0,
+      backgroundColor: 'statusBar.backgroundColor',
+      color: 'statusBar.color',
+      borderTop: '1px solid',
+      borderColor: 'statusBar.borderColor',
+    })}
+  >
+    {children}
+  </Stack>
+);

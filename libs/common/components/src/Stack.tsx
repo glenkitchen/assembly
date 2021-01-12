@@ -2,11 +2,13 @@ import css from '@styled-system/css';
 import styled from 'styled-components';
 import { Element } from './Element';
 
+// TODO name with Css Properties (rename as Flex)
+// breakpoints
 export interface StackProps {
-  direction?: 'horizontal' | 'vertical';
+  direction?: 'horizontal' | 'vertical'; //  React.CSSProperties[flexDirection]
   justify?: React.CSSProperties['justifyContent'];
   align?: React.CSSProperties['alignItems'];
-  gap?: number;
+  gap?: number; // spacing
 }
 
 export const Stack = styled(Element)<StackProps>(

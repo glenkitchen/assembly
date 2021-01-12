@@ -1,5 +1,4 @@
-import { Button, Stack } from '@assembly/common/components';
-import { css } from '@styled-system/css';
+import { Button } from '@assembly/common/components';
 import React from 'react';
 import {
   DeployIcon,
@@ -11,21 +10,7 @@ import {
 
 export const NavigationBar = () => {
   return (
-    <Stack
-      direction="vertical"
-      align="center"
-      gap={4}
-      css={css({
-        position: 'fixed',
-        top: 48,
-        bottom: 22,
-        left: 0,
-        padding: 2,
-        backgroundColor: 'navigationBar.backgroundColor',
-        borderRight: '1px solid',
-        borderColor: 'navigationBar.borderColor',
-      })}
-    >
+    <>
       <Button>
         <DeployIcon />
       </Button>
@@ -41,6 +26,6 @@ export const NavigationBar = () => {
       <Button>
         <LiveIcon />
       </Button>
-    </Stack>
+    </>
   );
 };

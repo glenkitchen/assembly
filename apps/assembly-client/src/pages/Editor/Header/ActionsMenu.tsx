@@ -72,7 +72,7 @@ const StyledMenuItem = styled(MuiMenuItem)(() => {
 const Divider = styled(MuiDivider)(
   css({
     '&&': {
-      backgroundColor: 'header.bordercolor',
+      backgroundColor: 'header.borderColor',
     },
   })
 );
