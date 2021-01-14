@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import styled, { css } from 'styled-components';
 import { Editor, ErrorFallback } from './pages';
 
-const NotFound = lazy(() => import('./pages/common/NotFound'));
+//const NotFound = lazy(() => import('./pages/common/NotFound'));
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
                   />
                 }
               />
-              <Route path="*" element={<NotFound />} />
+              {/* <Route path="*" element={<NotFound />} /> */}
             </Routes>
           </Suspense>
         </Content>

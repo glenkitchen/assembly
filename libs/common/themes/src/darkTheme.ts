@@ -16,6 +16,11 @@ export const darkTheme = {
       activeColor: colors.white,
       borderColor: colors.grays[400],
     },
+    editor: {
+      backgroundColor: 'rgb(28, 32, 34)',
+      color: 'rgb(204, 204, 204)',
+      borderColor: colors.grays[400],
+    },
     navigationBar: {
       backgroundColor: 'rgb(28, 32, 34)',
       color: 'rgb(204, 204, 204)',
@@ -32,8 +37,8 @@ export const darkTheme = {
       hoverBackground:
         'linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), rgb(45, 45, 45)',
       disabledColor: 'rgb(192, 192, 192)',
-      secondaryBackgroundColor: colors.black, //TODO
-      secondaryColor: colors.green, //TODO
+      secondaryBackgroundColor: colors.black, //
+      secondaryColor: colors.green, //
     },
   },
 

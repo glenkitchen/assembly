@@ -6,7 +6,6 @@ import {
   Divider as MuiDivider,
   Menu as MuiMenu,
   MenuItem as MuiMenuItem,
-  StylesProvider,
 } from '@material-ui/core';
 import css from '@styled-system/css';
 import styled from 'styled-components';

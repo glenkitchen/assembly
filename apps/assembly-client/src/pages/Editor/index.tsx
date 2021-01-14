@@ -2,10 +2,13 @@ import { Stack } from '@assembly/common/components';
 import css from '@styled-system/css';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import SplitPane from 'react-split-pane';
 import styled from 'styled-components';
+import { Content } from './Content';
 import { Header } from './Header';
 import { NavigationBar } from './NavigationBar';
 import { StatusBar } from './StatusBar';
+import { Workspace } from './Workspace';
 
 export const Editor = () => {
   return (
@@ -19,11 +22,10 @@ export const Editor = () => {
           <NavigationBar />
         </NavigationBarContainer>
         <SplitPaneContainer>
-          <div>One</div>
-          {/* <SplitPane>
-              <div>one</div>
-              <div>two</div>
-            </SplitPane> */}
+          <SplitPane split="vertical" defaultSize={250} minSize={100}>
+            <Workspace />
+            <Content />
+          </SplitPane>
         </SplitPaneContainer>
         <StatusBarContainer>
           <StatusBar />
@@ -75,7 +77,8 @@ const SplitPaneContainer = styled.div(
     right: 0,
     bottom: 22,
     left: 'calc(3.5rem + 1px)',
-    backgroundColor: 'green',
+    backgroundColor: 'editor.backgroundColor',
+    color: 'editor.color',
   })
 );
 

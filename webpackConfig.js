@@ -12,6 +12,7 @@ module.exports = (config) => {
       new webpack.ProvidePlugin({
         process: 'process/browser',
       }),
+      //'@babel/plugin-syntax-dynamic-import',
     ],
   };
 };
