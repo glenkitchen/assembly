@@ -1,4 +1,4 @@
-import { Button } from '@assembly/common/components';
+import { Tooltip, Button } from '@assembly/common/components';
 import React, { useState } from 'react';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Popover, Typography } from '@material-ui/core';
@@ -9,9 +9,11 @@ export const Notifications = () => {
 
   return (
     <>
-      <Button onClick={(event) => setAnchorEl(event.currentTarget)}>
-        <NotificationsIcon style={IconStyle} />
-      </Button>
+      <Tooltip title="Toggle Notifications">
+        <Button onClick={(event) => setAnchorEl(event.currentTarget)}>
+          <NotificationsIcon style={IconStyle} />
+        </Button>
+      </Tooltip>
       <Popover
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}

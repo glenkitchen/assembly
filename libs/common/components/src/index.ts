@@ -1,5 +1,5 @@
-export { Button } from './Button';
+export { Button } from './material-ui/Button';
+export { Tooltip } from './material-ui/Tooltip';
 export * from './Element';
 export * from './Fullscreen';
-export { Icon } from './Icons';
 export * from './Stack';

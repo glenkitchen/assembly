@@ -1,5 +1,4 @@
-import { Button } from '@assembly/common/components';
-import { makeStyles, Tooltip } from '@material-ui/core';
+import { Button, Tooltip } from '@assembly/common/components';
 import React from 'react';
 import {
   ExplorerIcon,
@@ -27,14 +26,12 @@ const iconMap = {
 };
 
 export const NavigationBar = () => {
-  const classes = useStyles();
-
   return (
     <>
       {items.map((item) => {
         const Icon = iconMap[item.id];
         return (
-          <Tooltip title={item.title} placement="right" classes={classes}>
+          <Tooltip title={item.title} placement="right">
             <Button onClick={() => setWorkspaceId(item.id)}>
               <Icon />
             </Button>
@@ -44,18 +41,3 @@ export const NavigationBar = () => {
     </>
   );
 };
-
-//Tooltip Component
-const useStyles = makeStyles({
-  tooltip: {
-    fontSize: 14,
-    backgroundColor: 'black',
-  },
-});
-
-// const Tip = styled(Tooltip)`
-//   & .MuiTooltip-tooltip {
-//     background-color: black;
-//     font-size: 14px;
-//   }
-// `;

@@ -1,5 +1,4 @@
-import { Button, Stack } from '@assembly/common/components';
-import { Tooltip } from '@material-ui/core';
+import { Tooltip, Button, Stack } from '@assembly/common/components';
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import React from 'react';
 import { ActionsMenu } from './ActionsMenu';
@@ -18,9 +17,7 @@ export const Actions = () => {
       //   }}
     >
       <Button>Create App</Button>
-      <Tooltip title="Toggle Notifications">
-        <Notifications />
-      </Tooltip>
+      <Notifications />
       <Tooltip title="Toggle Dark/Light Theme">
         <Button>
           <Brightness6Icon style={IconStyle} />
