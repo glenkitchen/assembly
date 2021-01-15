@@ -1,7 +1,7 @@
 import css from '@styled-system/css';
 import styled from 'styled-components';
 
-export interface ElementProps {
+export interface BoxProps {
   margin?: number;
   marginX?: number;
   marginY?: number;
@@ -20,28 +20,28 @@ export interface ElementProps {
   css?: Object;
 }
 
-export const Element = styled.div<ElementProps>((props) =>
+export const Box = styled.div<BoxProps>((props) =>
   css({
     boxSizing: 'border-box',
     margin: nullCheck(props.margin),
     marginX: nullCheck(props.marginX),
     marginY: nullCheck(props.marginY),
-    marginBottom: nullCheck(props.marginBottom),
     marginTop: nullCheck(props.marginTop),
+    marginBottom: nullCheck(props.marginBottom),
     marginLeft: nullCheck(props.marginLeft),
     marginRight: nullCheck(props.marginRight),
     padding: nullCheck(props.padding),
     paddingX: nullCheck(props.paddingX),
     paddingY: nullCheck(props.paddingY),
-    paddingBottom: nullCheck(props.paddingBottom),
     paddingTop: nullCheck(props.paddingTop),
+    paddingBottom: nullCheck(props.paddingBottom),
     paddingLeft: nullCheck(props.paddingLeft),
     paddingRight: nullCheck(props.paddingRight),
     ...(props.css || {}),
   })
 );
 
-const nullCheck = (value) => {
+const nullCheck = (value: number) => {
   // 0 is an allowed value, even though it is falsy
   if (typeof value !== 'undefined') {
     return value;

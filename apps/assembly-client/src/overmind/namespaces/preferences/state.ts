@@ -7,5 +7,6 @@ type State = {
 export const state: State = {
   settings: {
     theme: 'dark',
+    zenMode: false,
   },
 };

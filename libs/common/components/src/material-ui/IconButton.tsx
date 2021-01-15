@@ -7,7 +7,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { css } from '@styled-system/css';
 
-export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+export const IconButton: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <StylesProvider injectFirst>
       <StyledButton disableRipple size="small" {...props}>
@@ -17,21 +17,15 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   );
 };
 
-const StyledButton = styled(MuiButton)<ButtonProps>(({ color }) => {
+const StyledButton = styled(MuiButton)<ButtonProps>((props) => {
   return css({
-    paddingX: 2,
+    paddingX: 1,
     paddingY: 1,
-    textTransform: 'none',
-    fontSize: '0.85rem',
     minWidth: 0,
-    whiteSpace: 'nowrap',
-    backgroundColor:
-      color === 'secondary'
-        ? 'button.secondaryBackgroundColor'
-        : 'button.backgroundColor',
-    color: color === 'secondary' ? 'button.secondaryColor' : 'button.color',
+    backgroundColor: 'button.secondaryBackgroundColor',
+    color: 'button.secondaryColor',
     ':hover': {
-      background: (theme) => theme.colors.button.hoverBackground,
+      background: (theme) => theme.colors.button.secondaryHoverBackground,
     },
     ':disabled': { color: 'button.disabledColor' },
   });

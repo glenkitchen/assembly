@@ -1,16 +1,10 @@
 import { Fullscreen } from '@assembly/common/components';
 import { Typography } from '@material-ui/core';
-import { css } from '@styled-system/css';
 import React from 'react';
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
-    <Fullscreen
-      css={css({
-        backgroundColor: 'grays.900',
-        color: 'white',
-      })}
-    >
+    <Fullscreen>
       <Typography style={{ marginBottom: 80 }} variant="h3">
         Oh no! Something broke!
       </Typography>

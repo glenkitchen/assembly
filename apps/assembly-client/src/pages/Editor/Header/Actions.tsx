@@ -1,4 +1,9 @@
-import { Tooltip, Button, Stack } from '@assembly/common/components';
+import {
+  Tooltip,
+  IconButton,
+  Button,
+  Stack,
+} from '@assembly/common/components';
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import React from 'react';
 import { ActionsMenu } from './ActionsMenu';
@@ -16,12 +21,12 @@ export const Actions = () => {
       //     transition: 'opacity 0.25s ease-in-out',
       //   }}
     >
-      <Button>Create App</Button>
+      <Button>Create Tenant</Button>
       <Notifications />
       <Tooltip title="Toggle Dark/Light Theme">
-        <Button>
+        <IconButton>
           <Brightness6Icon style={IconStyle} />
-        </Button>
+        </IconButton>
       </Tooltip>
       <ActionsMenu />
     </Stack>

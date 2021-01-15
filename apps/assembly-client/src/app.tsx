@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import styled, { css } from 'styled-components';
-import { Editor, ErrorFallback } from './pages';
+import { Editor, ErrorFallback, NotFound } from './pages';
 
 //const NotFound = lazy(() => import('./pages/common/NotFound'));
 
@@ -26,7 +26,7 @@ const App = () => {
                   />
                 }
               />
-              {/* <Route path="*" element={<NotFound />} /> */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </Content>

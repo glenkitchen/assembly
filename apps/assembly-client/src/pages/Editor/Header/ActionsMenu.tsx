@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { Button } from '@assembly/common/components';
+import { IconButton } from '@assembly/common/components';
 import { IconStyle } from './Actions';
 import {
   Divider as MuiDivider,
@@ -15,9 +15,9 @@ export const ActionsMenu = () => {
 
   return (
     <>
-      <Button onClick={(event) => setAnchorEl(event.currentTarget)}>
+      <IconButton onClick={(event) => setAnchorEl(event.currentTarget)}>
         <MoreVertIcon style={IconStyle} />
-      </Button>
+      </IconButton>
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
@@ -75,6 +75,3 @@ const Divider = styled(MuiDivider)(
     },
   })
 );
-
-// position
-// icon

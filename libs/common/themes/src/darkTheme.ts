@@ -32,13 +32,15 @@ export const darkTheme = {
       borderColor: colors.grays[400],
     },
     button: {
-      backgroundColor: colors.black,
-      color: 'rgb(192, 192, 192)',
+      backgroundColor: 'rgb(9, 113, 241)',
+      color: 'white',
       hoverBackground:
-        'linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), rgb(45, 45, 45)',
+        'linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), rgb(9, 113, 241)',
       disabledColor: 'rgb(192, 192, 192)',
-      secondaryBackgroundColor: colors.black, //
-      secondaryColor: colors.green, //
+      secondaryBackgroundColor: colors.black, //TODO ...icon
+      secondaryColor: 'rgb(192, 192, 192)',
+      secondaryHoverBackground:
+        'linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), rgb(45, 45, 45)',
     },
   },
 

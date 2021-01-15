@@ -1,4 +1,4 @@
-import { Button, Tooltip } from '@assembly/common/components';
+import { IconButton, Tooltip } from '@assembly/common/components';
 import React from 'react';
 import {
   ExplorerIcon,
@@ -32,9 +32,9 @@ export const NavigationBar = () => {
         const Icon = iconMap[item.id];
         return (
           <Tooltip title={item.title} placement="right">
-            <Button onClick={() => setWorkspaceId(item.id)}>
+            <IconButton onClick={() => setWorkspaceId(item.id)}>
               <Icon />
-            </Button>
+            </IconButton>
           </Tooltip>
         );
       })}

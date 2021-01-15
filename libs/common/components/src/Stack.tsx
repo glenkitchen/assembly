@@ -1,8 +1,7 @@
 import css from '@styled-system/css';
 import styled from 'styled-components';
-import { Element } from './Element';
+import { Box } from './Box';
 
-// TODO name with Css Properties (rename as Flex)
 // breakpoints
 export interface StackProps {
   direction?: 'horizontal' | 'vertical'; //  React.CSSProperties[flexDirection]
@@ -11,7 +10,7 @@ export interface StackProps {
   gap?: number; // spacing
 }
 
-export const Stack = styled(Element)<StackProps>(
+export const Stack = styled(Box)<StackProps>(
   ({ direction = 'horizontal', justify, align, gap = 0 }) =>
     css({
       display: 'flex',

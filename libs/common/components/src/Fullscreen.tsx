@@ -1,8 +1,8 @@
 import { css } from '@styled-system/css';
 import styled from 'styled-components';
-import { Element } from './Element';
+import { Box } from './Box';
 
-export const Fullscreen = styled(Element)(() =>
+export const Fullscreen = styled(Box)(() =>
   css({
     display: 'flex',
     flexDirection: 'column',
@@ -10,5 +10,7 @@ export const Fullscreen = styled(Element)(() =>
     alignItems: 'center',
     height: '100vh',
     width: '100vw',
+    backgroundColor: 'grays.900',
+    color: 'white',
   })
 );

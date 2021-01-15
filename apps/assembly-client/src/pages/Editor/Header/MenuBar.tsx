@@ -1,4 +1,5 @@
 import { css } from '@styled-system/css';
+import { useOvermind } from '../../../overmind';
 import Menu, {
   Divider as RCDivider,
   MenuItem as RCMenuItem,
@@ -10,6 +11,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export const MenuBar = () => {
+  const { actions } = useOvermind();
+
   return (
     <Menu onClick={(menuInfo) => console.log(menuInfo)} mode="horizontal">
       <SubMenu title="File" key="1">
@@ -49,7 +52,16 @@ export const MenuBar = () => {
         <MenuItem key="_2-1">Undo</MenuItem>
       </SubMenu>
       <SubMenu title="View" key="4">
-        <MenuItem key="_2-1">Undo</MenuItem>
+        <SubMenu key="_3-11" title="Appearance">
+          <MenuItem
+            key="_3-1"
+            onClick={() => {
+              actions.editor.toggleStatusBar();
+            }}
+          >
+            Show Status Bar
+          </MenuItem>
+        </SubMenu>
       </SubMenu>
       <SubMenu title="Go" key="5">
         <MenuItem key="_2-1">Undo</MenuItem>

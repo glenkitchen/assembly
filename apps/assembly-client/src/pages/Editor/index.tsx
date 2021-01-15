@@ -4,6 +4,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import SplitPane from 'react-split-pane';
 import styled from 'styled-components';
+import { useOvermind } from '../../overmind';
 import { Content } from './Content';
 import { Header } from './Header';
 import { NavigationBar } from './NavigationBar';
@@ -11,6 +12,11 @@ import { StatusBar } from './StatusBar';
 import { Workspace } from './Workspace';
 
 export const Editor = () => {
+  const { state } = useOvermind();
+
+  const hideNavigation = false; // state.workspace.workspaceHidden
+  const hideStatusBar = state.editor.hideStatusBar;
+
   return (
     <>
       <Title />
@@ -21,15 +27,20 @@ export const Editor = () => {
         <NavigationBarContainer>
           <NavigationBar />
         </NavigationBarContainer>
-        <SplitPaneContainer>
+        <SplitPaneContainer
+          hideNavigation={hideNavigation}
+          hideStatusBar={hideStatusBar}
+        >
           <SplitPane split="vertical" defaultSize={250} minSize={100}>
             <Workspace />
             <Content />
           </SplitPane>
         </SplitPaneContainer>
-        <StatusBarContainer>
-          <StatusBar />
-        </StatusBarContainer>
+        {!hideStatusBar && (
+          <StatusBarContainer>
+            <StatusBar />
+          </StatusBarContainer>
+        )}
       </Container>
     </>
   );
@@ -70,16 +81,23 @@ const HeaderContainer = ({ children }) => (
   </Stack>
 );
 
-const SplitPaneContainer = styled.div(
-  css({
-    position: 'fixed',
-    top: 48,
-    right: 0,
-    bottom: 22,
-    left: 'calc(3.5rem + 1px)',
-    backgroundColor: 'editor.backgroundColor',
-    color: 'editor.color',
-  })
+interface LayoutProps {
+  hideNavigation: boolean;
+  hideStatusBar: boolean;
+}
+
+const SplitPaneContainer = styled.div<LayoutProps>(
+  ({ hideNavigation, hideStatusBar }) =>
+    css({
+      position: 'fixed',
+      top: 48,
+      right: 0,
+      bottom: 22,
+      left: hideNavigation ? 0 : 'calc(3.5rem + 1px)',
+      height: hideStatusBar ? '100%' : 'calc(100% - 4.35rem)',
+      backgroundColor: 'editor.backgroundColor',
+      color: 'editor.color',
+    })
 );
 
 const NavigationBarContainer = ({ children }) => (

@@ -1,16 +1,10 @@
 import { Fullscreen } from '@assembly/common/components';
 import { Typography } from '@material-ui/core';
-import { css } from '@styled-system/css';
 import React from 'react';
 
 const NotFound: React.FC = () => {
   return (
-    <Fullscreen
-      css={css({
-        backgroundColor: 'grays.900',
-        color: 'white',
-      })}
-    >
+    <Fullscreen>
       <Typography style={{ fontSize: '10rem', marginBottom: 100 }}>
         404
       </Typography>
