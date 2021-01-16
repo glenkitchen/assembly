@@ -56,6 +56,14 @@ export const MenuBar = () => {
           <MenuItem
             key="_3-1"
             onClick={() => {
+              actions.editor.toggleNavigationBar();
+            }}
+          >
+            Show Navigation Bar
+          </MenuItem>
+          <MenuItem
+            key="_3-1"
+            onClick={() => {
               actions.editor.toggleStatusBar();
             }}
           >

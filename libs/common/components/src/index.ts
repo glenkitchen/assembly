@@ -1,3 +1,4 @@
+export * from './material-ui/Accordion';
 export { Button } from './material-ui/Button';
 export { IconButton } from './material-ui/IconButton';
 export { Tooltip } from './material-ui/Tooltip';

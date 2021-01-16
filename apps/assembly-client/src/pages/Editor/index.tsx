@@ -11,10 +11,13 @@ import { NavigationBar } from './NavigationBar';
 import { StatusBar } from './StatusBar';
 import { Workspace } from './Workspace';
 
+const HEADER_HEIGHT = 48;
+const STATUS_BAR_HEIGHT = 22;
+
 export const Editor = () => {
   const { state } = useOvermind();
 
-  const hideNavigation = false; // state.workspace.workspaceHidden
+  const hideNavigationBar = state.editor.hideNavigationBar;
   const hideStatusBar = state.editor.hideStatusBar;
 
   return (
@@ -24,11 +27,14 @@ export const Editor = () => {
         <HeaderContainer>
           <Header />
         </HeaderContainer>
-        <NavigationBarContainer>
+        <NavigationBarContainer
+          hideNavigationBar={hideNavigationBar}
+          hideStatusBar={hideStatusBar}
+        >
           <NavigationBar />
         </NavigationBarContainer>
         <SplitPaneContainer
-          hideNavigation={hideNavigation}
+          hideNavigationBar={hideNavigationBar}
           hideStatusBar={hideStatusBar}
         >
           <SplitPane split="vertical" defaultSize={250} minSize={100}>
@@ -82,25 +88,27 @@ const HeaderContainer = ({ children }) => (
 );
 
 interface LayoutProps {
-  hideNavigation: boolean;
+  hideNavigationBar: boolean;
   hideStatusBar: boolean;
 }
 
 const SplitPaneContainer = styled.div<LayoutProps>(
-  ({ hideNavigation, hideStatusBar }) =>
+  ({ hideNavigationBar, hideStatusBar }) =>
     css({
       position: 'fixed',
-      top: 48,
+      top: HEADER_HEIGHT,
       right: 0,
-      bottom: 22,
-      left: hideNavigation ? 0 : 'calc(3.5rem + 1px)',
-      height: hideStatusBar ? '100%' : 'calc(100% - 4.35rem)',
+      bottom: hideStatusBar ? 0 : STATUS_BAR_HEIGHT,
+      left: hideNavigationBar ? 0 : 'calc(3.5rem + 1px)',
       backgroundColor: 'editor.backgroundColor',
       color: 'editor.color',
     })
 );
 
-const NavigationBarContainer = ({ children }) => (
+const NavigationBarContainer: React.FC<LayoutProps> = ({
+  hideStatusBar,
+  children,
+}) => (
   <Stack
     direction="vertical"
     align="center"
@@ -108,8 +116,8 @@ const NavigationBarContainer = ({ children }) => (
     padding={2}
     css={css({
       position: 'fixed',
-      top: 48,
-      bottom: 22,
+      top: HEADER_HEIGHT,
+      bottom: hideStatusBar ? 0 : STATUS_BAR_HEIGHT,
       left: 0,
       backgroundColor: 'navigationBar.backgroundColor',
       color: 'navigationBar.color',
@@ -126,7 +134,7 @@ const StatusBarContainer = ({ children }) => (
     justify="space-between"
     align="center"
     css={css({
-      height: 22,
+      height: STATUS_BAR_HEIGHT,
       position: 'fixed',
       bottom: 0,
       right: 0,

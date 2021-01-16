@@ -4,7 +4,6 @@ import {
   TooltipProps,
 } from '@material-ui/core';
 import React from 'react';
-import styled from 'styled-components';
 
 export const Tooltip: React.FC<TooltipProps> = ({ children, ...props }) => {
   const classes = useStyles();
@@ -22,10 +21,3 @@ const useStyles = makeStyles({
     backgroundColor: 'black',
   },
 });
-
-// const Tip = styled(Tooltip)`
-//   & .MuiTooltip-tooltip {
-//     background-color: black;
-//     font-size: 14px;
-//   }
-// `;

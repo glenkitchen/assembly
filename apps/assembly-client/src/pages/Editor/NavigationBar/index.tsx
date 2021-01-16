@@ -1,4 +1,5 @@
 import { IconButton, Tooltip } from '@assembly/common/components';
+import { useOvermind } from '../../../overmind';
 import React from 'react';
 import {
   ExplorerIcon,
@@ -7,7 +8,6 @@ import {
   LiveIcon,
   SettingsIcon,
 } from './icons';
-import { setWorkspaceId } from '../Workspace';
 
 const items = [
   { title: 'Tenant Info', id: 'tenantInfo' },
@@ -17,7 +17,7 @@ const items = [
   { title: 'Translations', id: 'translations' },
 ];
 
-const iconMap = {
+const icons = {
   tenantInfo: InfoIcon,
   dataConnectors: ExplorerIcon,
   templates: SettingsIcon,
@@ -26,13 +26,17 @@ const iconMap = {
 };
 
 export const NavigationBar = () => {
+  const { actions } = useOvermind();
+
   return (
     <>
-      {items.map((item) => {
-        const Icon = iconMap[item.id];
+      {items.map(({ id, title }) => {
+        const Icon = icons[id];
         return (
-          <Tooltip title={item.title} placement="right">
-            <IconButton onClick={() => setWorkspaceId(item.id)}>
+          <Tooltip title={title} placement="right">
+            <IconButton
+              onClick={() => actions.editor.setCurrentWorkspaceId({ id })}
+            >
               <Icon />
             </IconButton>
           </Tooltip>
