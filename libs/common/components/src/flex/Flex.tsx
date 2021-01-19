@@ -1,25 +1,24 @@
 import css from '@styled-system/css';
 import styled from 'styled-components';
-import { Box } from './Box';
+import { Box } from '../Box';
 
-// breakpoints
 export interface StackProps {
-  direction?: 'horizontal' | 'vertical'; //  React.CSSProperties[flexDirection]
+  direction?: React.CSSProperties['flexDirection'];
   justify?: React.CSSProperties['justifyContent'];
   align?: React.CSSProperties['alignItems'];
   gap?: number; // spacing
 }
 
-export const Stack = styled(Box)<StackProps>(
-  ({ direction = 'horizontal', justify, align, gap = 0 }) =>
+export const Flex = styled(Box)<StackProps>(
+  ({ direction = 'row', justify, align, gap = 0 }) =>
     css({
       display: 'flex',
-      flexDirection: direction === 'horizontal' ? 'row' : 'column',
+      flexDirection: direction,
       justifyContent: justify,
       alignItems: align,
 
       '> *:not(:last-child)': {
-        [direction === 'horizontal' ? 'marginRight' : 'marginBottom']: gap,
+        [direction === 'row' ? 'marginRight' : 'marginBottom']: gap,
       },
     })
 );

@@ -1,6 +1,6 @@
 import { css } from '@styled-system/css';
 import styled from 'styled-components';
-import { Box } from './Box';
+import { Box } from '../Box';
 
 export const Fullscreen = styled(Box)(() =>
   css({

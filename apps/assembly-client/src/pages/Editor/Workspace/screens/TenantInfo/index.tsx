@@ -1,5 +1,4 @@
-import { Button } from '@assembly/common/components';
-import Collapse, { Panel } from 'rc-collapse';
+import { Button, Collapse, Panel } from '@assembly/common/components';
 import React from 'react';
 
 export const TenantInfo = () => {

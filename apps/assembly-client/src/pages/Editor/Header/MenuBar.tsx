@@ -1,21 +1,13 @@
-import { css } from '@styled-system/css';
+import { Divider, Menu, MenuItem, SubMenu } from '@assembly/common/components';
+import React from 'react';
 import { useOvermind } from '../../../overmind';
-import Menu, {
-  Divider as RCDivider,
-  MenuItem as RCMenuItem,
-  MenuItemProps,
-  SubMenu as RCSubMenu,
-  SubMenuProps,
-} from 'rc-menu';
-import React, { useState } from 'react';
-import styled from 'styled-components';
 
 export const MenuBar = () => {
   const { actions } = useOvermind();
 
   return (
     <Menu onClick={(menuInfo) => console.log(menuInfo)} mode="horizontal">
-      <SubMenu title="File" key="1">
+      <SubMenu title="File" key="1" popupOffset={[0, 0]}>
         <MenuItem key="1-1">New File</MenuItem>
         <MenuItem key="1-2">New Sandbox...</MenuItem>
         <Divider />
@@ -45,13 +37,13 @@ export const MenuBar = () => {
         <MenuItem key="1-12">Revert File</MenuItem>
         <MenuItem key="1-13">Close Editor</MenuItem>
       </SubMenu>
-      <SubMenu title="Edit" key="2">
+      <SubMenu title="Edit" key="2" popupOffset={[0, 0]}>
         <MenuItem key="_2-1">Undo</MenuItem>
       </SubMenu>
-      <SubMenu title="Selection" key="3">
+      <SubMenu title="Selection" key="3" popupOffset={[0, 0]}>
         <MenuItem key="_2-1">Undo</MenuItem>
       </SubMenu>
-      <SubMenu title="View" key="4">
+      <SubMenu title="View" key="4" popupOffset={[0, 0]}>
         <SubMenu key="_3-11" title="Appearance">
           <MenuItem
             key="_3-1"
@@ -71,84 +63,12 @@ export const MenuBar = () => {
           </MenuItem>
         </SubMenu>
       </SubMenu>
-      <SubMenu title="Go" key="5">
+      <SubMenu title="Go" key="5" popupOffset={[0, 0]}>
         <MenuItem key="_2-1">Undo</MenuItem>
       </SubMenu>
-      <SubMenu title="Help" key="6">
+      <SubMenu title="Help" key="6" popupOffset={[0, 0]}>
         <MenuItem key="_2-1">Undo</MenuItem>
       </SubMenu>
     </Menu>
   );
 };
-
-const SubMenu: React.FC<SubMenuProps> = ({ children, ...props }) => {
-  const [active, setActive] = useState(false);
-
-  return (
-    <StyledSubmenu
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-      isActive={active}
-      {...props}
-    >
-      {children}
-    </StyledSubmenu>
-  );
-};
-
-interface StyledSubmenuProps {
-  // SubMenuProps already has a propery named active,
-  // so use the name isActive.
-  isActive?: boolean;
-}
-
-const StyledSubmenu = styled(RCSubMenu)<StyledSubmenuProps>(
-  ({ isActive }: StyledSubmenuProps) => {
-    return css({
-      backgroundColor: isActive
-        ? 'header.activeBackgroundColor'
-        : 'header.backgroundColor',
-      color: isActive ? 'header.activeColor' : 'header.color',
-      fontSize: '0.8125rem',
-    });
-  }
-);
-
-const MenuItem: React.FC<MenuItemProps> = ({ children, ...props }) => {
-  const [active, setActive] = useState(false);
-
-  return (
-    <StyledMenuItem
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-      isActive={active}
-      {...props}
-    >
-      {children}
-    </StyledMenuItem>
-  );
-};
-
-interface StyledMenuItemProps {
-  // MenuItemProps already has a propery named active,
-  // so use the name isActive.
-  isActive?: boolean;
-}
-
-const StyledMenuItem = styled(RCMenuItem)<StyledMenuItemProps>(
-  ({ isActive }: StyledMenuItemProps) => {
-    return css({
-      backgroundColor: isActive
-        ? 'header.activeBackgroundColor'
-        : 'header.backgroundColor',
-      color: isActive ? 'header.activeColor' : 'header.color',
-      fontSize: '0.8125rem',
-    });
-  }
-);
-
-const Divider = styled(RCDivider)(
-  css({
-    backgroundColor: 'header.borderColor',
-  })
-);

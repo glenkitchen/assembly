@@ -1,4 +1,4 @@
-import { Stack } from '@assembly/common/components';
+import { Flex } from '@assembly/common/components';
 import css from '@styled-system/css';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -69,7 +69,7 @@ const Container = styled.div(
 );
 
 const HeaderContainer = ({ children }) => (
-  <Stack
+  <Flex
     as="header"
     justify="space-between"
     align="center"
@@ -84,7 +84,7 @@ const HeaderContainer = ({ children }) => (
     })}
   >
     {children}
-  </Stack>
+  </Flex>
 );
 
 interface LayoutProps {
@@ -109,8 +109,8 @@ const NavigationBarContainer: React.FC<LayoutProps> = ({
   hideStatusBar,
   children,
 }) => (
-  <Stack
-    direction="vertical"
+  <Flex
+    direction="column"
     align="center"
     gap={4}
     padding={2}
@@ -126,11 +126,11 @@ const NavigationBarContainer: React.FC<LayoutProps> = ({
     })}
   >
     {children}
-  </Stack>
+  </Flex>
 );
 
 const StatusBarContainer = ({ children }) => (
-  <Stack
+  <Flex
     justify="space-between"
     align="center"
     css={css({
@@ -146,5 +146,5 @@ const StatusBarContainer = ({ children }) => (
     })}
   >
     {children}
-  </Stack>
+  </Flex>
 );

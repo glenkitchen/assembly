@@ -701,6 +701,7 @@ body {
 .rc-menu-hidden {
   display: none;
 }
+
 .rc-menu-collapse {
   overflow: hidden;
   transition: height 0.3s ease-out;

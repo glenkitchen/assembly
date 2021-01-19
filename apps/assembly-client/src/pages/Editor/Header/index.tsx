@@ -1,5 +1,4 @@
-import { Stack } from '@assembly/common/components';
-import { Avatar, Typography } from '@material-ui/core';
+import { Flex, Typography, Avatar } from '@assembly/common/components';
 import React from 'react';
 import { Actions } from './Actions';
 import { MenuBar } from './MenuBar';
@@ -7,7 +6,7 @@ import { MenuBar } from './MenuBar';
 export const Header = () => {
   return (
     <>
-      <Stack align="center">
+      <Flex align="center">
         <Avatar
           src="https://avatars3.githubusercontent.com/u/9795765?v=4"
           alt="glenkitchen"
@@ -17,7 +16,7 @@ export const Header = () => {
         <div style={{ paddingBottom: 14 }}>
           <MenuBar />
         </div>
-      </Stack>
+      </Flex>
       <Typography style={{ fontSize: '0.85rem' }}>tenant-name</Typography>
       <Actions />
     </>

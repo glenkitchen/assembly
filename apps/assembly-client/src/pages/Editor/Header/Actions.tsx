@@ -1,9 +1,4 @@
-import {
-  Tooltip,
-  IconButton,
-  Button,
-  Stack,
-} from '@assembly/common/components';
+import { Tooltip, IconButton, Button, Flex } from '@assembly/common/components';
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import React from 'react';
 import { ActionsMenu } from './ActionsMenu';
@@ -13,7 +8,7 @@ export const Actions = () => {
   //const [fadeIn, setFadeIn] = useState(false);
 
   return (
-    <Stack
+    <Flex
       align="center"
       gap={2}
       //   style={{
@@ -29,7 +24,7 @@ export const Actions = () => {
         </IconButton>
       </Tooltip>
       <ActionsMenu />
-    </Stack>
+    </Flex>
   );
 };
 

@@ -34,5 +34,8 @@ const StyledButton = styled(MuiButton)<ButtonProps>(({ color }) => {
       background: (theme) => theme.colors.button.hoverBackground,
     },
     ':disabled': { color: 'button.disabledColor' },
+    // '& .MuiButton-label': {
+    //   color: 'red',
+    // },
   });
 });
