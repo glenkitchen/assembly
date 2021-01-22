@@ -1,4 +1,5 @@
 {
   "presets": ["@nrwl/react/babel"],
-  "plugins": [["styled-components", { "pure": true, "ssr": true }]]
+  "plugins": [["styled-components", { "pure": true, "ssr": true }], 
+              "@babel/plugin-syntax-dynamic-import"] //Not Working
 }
