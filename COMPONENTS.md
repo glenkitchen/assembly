@@ -1,42 +1,41 @@
 # Components
 
-- Avoid building base components. Use pre-built components from component libraries.
+- Avoid building base components. Just use components from component libraries.
 - Choose a component in this order of priority:
 
-  - Use a [Material UI](https://material-ui.com) component. Material UI is the base component, theming and styling solution.
+  - Use a [Material UI](https://material-ui.com) component. Material UI is the base component library.
   - Use a component from another library if Material UI does not provide the component or the Material UI component is not as useful as the third-party component. (Not just slightly less useful, but materially less useful.)
-  - Use [Styled Components](https://styled-components.com/) to create components that are not provided by Material-UI or any other third-party library. Generally these should only be layout components. This should always be a last resort and only necessary for rare use cases.
+  - Use [Styled Components](https://styled-components.com/) to create components that are not provided by Material-UI or a third-party library. This should always be a last resort and only necessary for layout components or rare use cases.
 
 # Themes
 
-- Avoid building a theme solution. Use [Material UI](https://material-ui.com) as the base theming solution.
+- Avoid building a theme solution. Just use [Material UI](https://material-ui.com) theming.
 
-- Allow a tenant to use a [Material UI](https://material-ui.com) theme or a non-Material UI theme:
+- Although Material UI provides the theming, the theme does not have to be styled as a Material UI theme. It can can also be styled with a non-Material UI look and feel. The available themes are:
   - Material UI Dark
   - Material UI Light
-  - Assembly Dark (Similar to CodeSandbox Dark)
-- Customise a Material UI theme to implement a non-Material UI theme.
+  - Assembly Dark
+- The non-Material UI theme is implemented as a Material UI theme with overrides.
 
 # Styles
 
-- Use Styled Components to create base components not provided by Material UI or another third-party library.
+- Use [Styled Components](https://styled-components.com/) to create base components not provided by Material UI or another third-party library.
 
-- Use [Styled Components](https://styled-components.com/) to wrap a Material UI components or third-party component in a style. This only need to be done for a non-Material UI style that can't be implemented in the theme.
+- Use [Styled Components](https://styled-components.com/) to wrap a Material UI components or third-party component in a style. This only need to be done if the component needs a non-Material UI style that can't be implemented in the theme.
 
-# Appendix. Implement Material UI Theme Solution
+# Appendix. Implement the Material UI Theme Solution
 
-Use the Material UI `createMuiTheme` function to create a theme object:
+Get the theme name from Overmind state, and pass it to a `makeTheme` function which:
 
-- Use overrides to style Material UI components with a non-Material UI Style (A)
-- Use custom theme properties to style Non-Material UI components with a non-Materal UI Style (B)
-
-Wrap the app in the Material UI `MuiThemeProvider` which provides a theme to the all components in the application.
-
-Get the theme name from Overmind, and pass it to a `makeTheme` function which:
-
-- Customizes the theme by theme name
-- Calls `createMuiTheme` to create a theme object
+- Calls `createMuiTheme` to create a customized theme object
 - Assigns the theme object to the `MuiThemeProvider.theme` property
+
+Use the Material UI `createMuiTheme` function to create a theme object. For the non-Material theme:
+
+- Customize Material UI components with `styleOverrides`, `defaultProps` and theme variables.
+- Customize non-Material UI components with custom theme variables.
+
+Wrap the app in the Material UI `MuiThemeProvider` which provides the theme to the all components in the application.
 
 # Appendix. Wrap a Material UI Component with a Styled Component (C)
 
@@ -60,7 +59,7 @@ Get the theme name from Overmind, and pass it to a `makeTheme` function which:
 - IconButton
 - Tooltip
 - Typography
-- Ant Design Menu ()
+- Ant Design Menu
 - CodesandBox Collapse
 - Box
 - Flex (Use Grid)
