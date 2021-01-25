@@ -3,7 +3,7 @@
 Design Principles
 
 - Avoid building base components. (We are not component authors). Use existing component libraries.
-- Ensure consistent styling and theming even though we use components across different libararies.
+- Ensure consistent styling even though we use components across different libararies.
 
 Tech Stack
 
@@ -22,17 +22,35 @@ Style and theme components as follows:
 
 - Apply styling by wrapping Material UI and third-party components with a Styled Component.
 - Use Styled Components to create custom components.
-- Apply theme variables to styles with the Styled System `css` prop.
+- Use the Styles Componenets theme object (Apply the theme variables with the Styled System `css` prop.)
 
-# Appendix. Wrap a Material UI Component with a Styled Component (1)
+# Appendix. Wrap a Material UI Component with a Styled Component
 
 - https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce
 
-# Appendix. Wrap an Ant Design Component with a Styled Component (2)
+# Appendix. Wrap an Ant Design Component with a Styled Component (1)
 
 - https://gist.github.com/newswim/fa916c66477ddd5952f7d6548e6a0605
 
 # TODO
+
+Notes:
+
+- Consume properties that should not be passed to a child element:
+
+  - Gather the rest of the parameters with the rest operator
+  - Spread the rest parameter on the parent elemene with the spread operator
+
+- Style child elements and override a style
+
+  - Style the element or style with a higher specificity. (Use & to reference the main component)
+
+          & .label    // style child
+          &.disabled  // override class
+
+  - Use the classes property to reference the generated class name
+
+Components
 
 - Box
 - FullScreen (Use Grid) HERE
@@ -53,6 +71,11 @@ Style and theme components as follows:
 - Browser/JSON
 
 # Themes TODO FROM HERE (Still Using Styled Components Theme with CSS)
+
+- Share the Material UI theme object with Material UI and styles. (2 POC)
+  Not working because we dont know what theme variables are targeting which colors. Look at the documentation or source code to work this out
+
+Share the Styled Components theme object with styles and Material UI.
 
 - Avoid building a theme solution. Just use [Material UI](https://material-ui.com) theming.
 
